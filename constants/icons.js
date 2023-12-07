@@ -21,6 +21,8 @@ import Tasks from "../assets/icons/Tasks.png";
 import time from "../assets/icons/time.png";
 import user from "../assets/icons/user.png";
 import LogoWhiteColor from "../assets/icons/LogoWhiteColor.png";
+import emaiIcon from "../assets/icons/emaiIcon.png";
+import emailVector from "../assets/icons/emailVector.png";
 
 export default {
   compass,
@@ -44,5 +46,7 @@ export default {
   TaskColor,
   filter,
   Budgeting,
-  LogoWhiteColor
+  LogoWhiteColor,
+  emaiIcon,
+  emailVector
 };

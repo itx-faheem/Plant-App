@@ -5,7 +5,7 @@ import React from 'react'
 import { COLORS, SIZES, icons, images } from '../../../constants'
 import { AppButton } from "../../../component/appcomponent";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
     return (
         <View style={{ flex: 1 }}>
             <ImageBackground
@@ -14,16 +14,16 @@ const WelcomeScreen = () => {
                 style={styles.bgcImg}
             >
                 <View style={styles.wrapper} >
-                    <View style={{gap:16}}>
-                        <Image  source={icons.LogoWhiteColor}  style={{width:176, height:48}} />
-                        <Text style={{color:COLORS.white, fontSize:SIZES.font}} >You want to talk logistics?</Text>
+                    <View style={{ gap: 16, alignItems: "center", justifyContent: "center" }}>
+                        <Image source={icons.LogoWhiteColor} style={{ width: 176, height: 48 }} />
+                        <Text style={{ color: COLORS.white, fontSize: SIZES.font }} >You want to talk logistics?</Text>
                     </View>
-                    <View style={{justifyContent:"center", alignItems:"center", gap:12}} >
-                        <AppButton title="Login" style={{backgroundColor:COLORS.white}} color={{color:COLORS.primary}}   />
-                        <AppButton title="Get Started" style={{backgroundColor:"transparent", borderWidth:1, borderColor:COLORS.tertiary}}  />
+                    <View style={{ justifyContent: "center", alignItems: "center", gap: 12 }} >
+                        <AppButton title="Login" style={{ backgroundColor: COLORS.white }} color={{ color: COLORS.primary }} onPress={() => navigation.push("Login")} />
+                        <AppButton title="Get Started" style={{ backgroundColor: "transparent", borderWidth: 1, borderColor: COLORS.tertiary }} />
                     </View>
-                    <View>
-                        <Text style={{width:"85%",textAlign:"center"}} >By signing up you agree to the User Notice and Privacy policy</Text>
+                    <View style={{ alignItems: "center" }} >
+                        <Text style={{ width: "88%", textAlign: "center", fontSize: SIZES.medium, color: COLORS.white }} >By signing up you agree to the User Notice and Privacy policy</Text>
                     </View>
                 </View>
             </ImageBackground>
@@ -36,15 +36,15 @@ export default WelcomeScreen;
 const styles = StyleSheet.create({
     bgcImg: {
         flex: 1,
-        // justifyContent:"center",
-        // alignItems:"center"
     },
     wrapper: {
         gap: 32,
+        justifyContent: "center",
+        top: "18%"
     },
     profileImg: {
         width: "40%",
-        height: 40, 
+        height: 40,
     },
     getStartedBtn: {
         backgroundColor: "transparent",

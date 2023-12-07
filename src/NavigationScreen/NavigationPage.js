@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Splash, WelcomeScreen} from "./LoginPages";
-import { AppButton } from '../../component/appcomponent';
+import { 
+  Splash, 
+  WelcomeScreen,
+  Login,ForgotPass,
+  ForgotStepto,
+  SetPassword
+} from "./LoginPages";
+import { AppButton, AppHeader } from '../../component/appcomponent';
 
 
 const HomeScreen = () => {
@@ -18,15 +24,21 @@ const HomeScreen = () => {
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}
-    //   initialRouteName="AppButton"
+      // initialRouteName="AppHeader"
 
     >
-    {/* <Stack.Screen  name='AppButton' component={AppButton} /> */}
+    {/* <Stack.Screen  name='AppHeader' component={AppHeader} /> */}
       {isSplashScreen ? (
         <Stack.Screen name="Splash" component={Splash} />
       ) : (
+        <>
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
-      )}
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="ForgotPass" component={ForgotPass} />
+        <Stack.Screen name="ForgotStepto" component={ForgotStepto} />
+        <Stack.Screen name="SetPassword" component={SetPassword} />
+        </>
+        )}
     </Stack.Navigator>
   );
 };
