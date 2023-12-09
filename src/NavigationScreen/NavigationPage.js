@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { 
-  Splash, 
+import {
+  Splash,
   WelcomeScreen,
-  Login,ForgotPass,
+  Login, ForgotPass,
   ForgotStepto,
-  SetPassword
+  SetPassword,
 } from "./LoginPages";
+import {
+  SignUp,
+  OtpCode
+} from "./SignUpPages";
 import { AppButton, AppHeader } from '../../component/appcomponent';
+// import { SignUpForm } from './SignUpPages/SignUpComponent';
+// import { OtpText } from './SignUpPages/OtpCodeComponet';
 
 
 const HomeScreen = () => {
-    const Stack = createNativeStackNavigator();
-    const [isSplashScreen, setisSplashScreen] = useState(true);
+  const Stack = createNativeStackNavigator();
+  const [isSplashScreen, setisSplashScreen] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -24,21 +30,22 @@ const HomeScreen = () => {
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}
-      // initialRouteName="AppHeader"
-
+      // initialRouteName="OtpText"
     >
-    {/* <Stack.Screen  name='AppHeader' component={AppHeader} /> */}
+      {/* <Stack.Screen name='OtpText' component={OtpText} /> */}
       {isSplashScreen ? (
         <Stack.Screen name="Splash" component={Splash} />
       ) : (
         <>
-        <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="ForgotPass" component={ForgotPass} />
-        <Stack.Screen name="ForgotStepto" component={ForgotStepto} />
-        <Stack.Screen name="SetPassword" component={SetPassword} />
+          <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="ForgotPass" component={ForgotPass} />
+          <Stack.Screen name="ForgotStepto" component={ForgotStepto} />
+          <Stack.Screen name="SetPassword" component={SetPassword} />
+          <Stack.Screen name="SignUp" component={SignUp} />
+          <Stack.Screen name="OtpCode" component={OtpCode} />
         </>
-        )}
+      )}
     </Stack.Navigator>
   );
 };

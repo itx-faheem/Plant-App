@@ -20,7 +20,7 @@ const WelcomeScreen = ({ navigation }) => {
                     </View>
                     <View style={{ justifyContent: "center", alignItems: "center", gap: 12 }} >
                         <AppButton title="Login" style={{ backgroundColor: COLORS.white }} color={{ color: COLORS.primary }} onPress={() => navigation.push("Login")} />
-                        <AppButton title="Get Started" style={{ backgroundColor: "transparent", borderWidth: 1, borderColor: COLORS.tertiary }} />
+                        <AppButton title="Get Started" style={{ backgroundColor: "transparent", borderWidth: 1, borderColor: COLORS.tertiary }}  onPress={() =>navigation.push("SignUp")}   />
                     </View>
                     <View style={{ alignItems: "center" }} >
                         <Text style={{ width: "88%", textAlign: "center", fontSize: SIZES.medium, color: COLORS.white }} >By signing up you agree to the User Notice and Privacy policy</Text>
