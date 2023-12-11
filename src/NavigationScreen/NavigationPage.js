@@ -9,9 +9,11 @@ import {
 } from "./LoginPages";
 import {
   SignUp,
-  OtpCode
+  OtpCode,
+  LastScreen
 } from "./SignUpPages";
 import { AppButton, AppHeader } from '../../component/appcomponent';
+import BottomNavigation from './AddEventScreen/BottomTabNavigation/BottomNavigation';
 // import { SignUpForm } from './SignUpPages/SignUpComponent';
 // import { OtpText } from './SignUpPages/OtpCodeComponet';
 
@@ -44,6 +46,8 @@ const HomeScreen = () => {
           <Stack.Screen name="SetPassword" component={SetPassword} />
           <Stack.Screen name="SignUp" component={SignUp} />
           <Stack.Screen name="OtpCode" component={OtpCode} />
+          <Stack.Screen name="LastScreen" component={LastScreen} />
+          <Stack.Screen name='Home'  component={BottomNavigation}  />
         </>
       )}
     </Stack.Navigator>

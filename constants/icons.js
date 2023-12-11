@@ -23,6 +23,7 @@ import user from "../assets/icons/user.png";
 import LogoWhiteColor from "../assets/icons/LogoWhiteColor.png";
 import emaiIcon from "../assets/icons/emaiIcon.png";
 import emailVector from "../assets/icons/emailVector.png";
+import BudgetingColorIcon from "../assets/icons/BudgetingColorIcon.png";
 
 export default {
   compass,
@@ -48,5 +49,6 @@ export default {
   Budgeting,
   LogoWhiteColor,
   emaiIcon,
-  emailVector
+  emailVector,
+  BudgetingColorIcon
 };
