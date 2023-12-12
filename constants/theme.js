@@ -8,7 +8,8 @@ const COLORS = {
   white: "#FFF",
   lightWhite: "#FAFAFC",
   black : "#000000",
-  dark :"#1C2A2B"
+  dark :"#1C2A2B",
+  lightGray :  "#344B67"
 };
 
 const WIDTH = {

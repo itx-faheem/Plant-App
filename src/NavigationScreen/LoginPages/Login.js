@@ -77,7 +77,7 @@ const Login = ({ navigation }) => {
                                 <Text style={{ ...commonTextStyles, color: COLORS.primary, fontWeight: '600' }}>Forgot Password</Text>
                             </TouchableOpacity>
                             <View style={{ justifyContent: 'center', alignItems: 'center', }}>
-                                <AppButton title="Sign In" style={{ width: '100%' }} />
+                                <AppButton title="Sign In" style={{ width: '100%' }} onPress={()=>navigation.push("Home")}  />
                             </View>
                         </View>
                     </View>
@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
     },
     inputs: {
         width: "90%",
+        color:COLORS.dark
     },
     logoContainer: {
         justifyContent: 'center',

@@ -35,6 +35,6 @@ const styles = StyleSheet.create({
         width: "95%",
         paddingHorizontal: 15,
         fontSize: SIZES.font,
-        color: COLORS.black,
+        color: COLORS.gray,
     }
 })

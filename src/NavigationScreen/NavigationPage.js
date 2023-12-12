@@ -14,6 +14,7 @@ import {
 } from "./SignUpPages";
 import { AppButton, AppHeader } from '../../component/appcomponent';
 import BottomNavigation from './AddEventScreen/BottomTabNavigation/BottomNavigation';
+import  CreateEvent  from './AddEventScreen/CreateAnEvent/CreateEvent';
 // import { SignUpForm } from './SignUpPages/SignUpComponent';
 // import { OtpText } from './SignUpPages/OtpCodeComponet';
 
@@ -32,7 +33,7 @@ const HomeScreen = () => {
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}
-      // initialRouteName="OtpText"
+    // initialRouteName="OtpText"
     >
       {/* <Stack.Screen name='OtpText' component={OtpText} /> */}
       {isSplashScreen ? (
@@ -47,7 +48,8 @@ const HomeScreen = () => {
           <Stack.Screen name="SignUp" component={SignUp} />
           <Stack.Screen name="OtpCode" component={OtpCode} />
           <Stack.Screen name="LastScreen" component={LastScreen} />
-          <Stack.Screen name='Home'  component={BottomNavigation}  />
+          <Stack.Screen name='Home' component={BottomNavigation} />
+          <Stack.Screen name='CreateEvent' component={CreateEvent} />
         </>
       )}
     </Stack.Navigator>

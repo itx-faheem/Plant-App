@@ -73,5 +73,6 @@ const styles = StyleSheet.create({
     },
     inputs: {
         width: "90%",
+        color:COLORS.dark
     }
 })
