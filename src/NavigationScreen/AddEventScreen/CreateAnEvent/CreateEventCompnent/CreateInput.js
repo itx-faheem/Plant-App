@@ -1,11 +1,17 @@
-import { Image, KeyboardAvoidingView, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
-import React from 'react'
+import { Image, KeyboardAvoidingView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import React, { useState } from 'react'
 import { COLORS, SIZES, icons } from '../../../../../constants'
 import AppIcon from "react-native-vector-icons/AntDesign";
 import RadioButton from './RadioButton';
 import { AppButton } from '../../../../../component/appcomponent';
-const CreateInput = () => {
+// import CreateBottomSheet from './CreateBottomSheet';
 
+const CreateInput = ({ onPress }) => {
+
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const openModal = () => setModalOpen(true);
+    const closeModal = () => setModalOpen(false);
 
 
     const EventInput = () => (
@@ -33,18 +39,29 @@ const CreateInput = () => {
                 <Text style={styles.inputNames} >Event Date</Text>
                 <View style={styles.dateandTimewarpper} >
                     <Image style={styles.iconstyle} source={icons.date} />
-                    <TextInput placeholder='Event Date' placeholderTextColor={COLORS.lightGray} />
-                    <AppIcon name="down" />
+                    <TextInput placeholder='Event Date' style={{ color: COLORS.dark }} placeholderTextColor={COLORS.lightGray} />
+                    <TouchableOpacity activeOpacity={0.5}
+                        // onPress={() => openModal()}
+                    >
+                        <AppIcon name="down" color={COLORS.lightGray} />
+                    </TouchableOpacity>
                 </View>
             </View>
             <View>
                 <Text style={styles.inputNames} >Event Time</Text>
                 <View style={styles.dateandTimewarpper} >
                     <Image style={styles.iconstyle} source={icons.time} />
-                    <TextInput placeholder='Choose Time' placeholderTextColor={COLORS.lightGray} />
-                    <AppIcon name="down" />
+                    <TextInput placeholder='Choose Time' style={{ color: COLORS.dark }} placeholderTextColor={COLORS.lightGray} />
+                    <TouchableOpacity activeOpacity={0.5}   >
+                        <AppIcon name="down" color={COLORS.lightGray}
+                            // onPress={() => openModal()}
+                        />
+                    </TouchableOpacity>
                 </View>
             </View>
+            {/* <CreateBottomSheet   
+            // visible={isModalOpen} onClose={closeModal} 
+             /> */}
         </View>
     )
 
@@ -83,10 +100,12 @@ const CreateInput = () => {
             </View>
         </View>
     )
-    
-    const AppButtonComponent =  () =>(
-        <View style={{justifyContent:"center", alignItems:"center"}} >
-            <AppButton title="Continue"  style={styles.btn} />
+
+    const AppButtonComponent = ({ onPress }) => (
+        <View style={{ justifyContent: "center", alignItems: "center" }} >
+            <AppButton title="Continue" style={styles.btn}
+                onPress={onPress}
+            />
         </View>
     )
 
@@ -99,9 +118,9 @@ const CreateInput = () => {
                 <Location />
                 <RadioButton />
                 <Price />
-                <AppButtonComponent />
+                <AppButtonComponent onPress={onPress} />
             </View>
-          
+
         </View>
     )
 }
@@ -122,12 +141,14 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         paddingVertical: 12,
         paddingHorizontal: 16,
-        borderRadius: 8
+        borderRadius: 8,
+        color: COLORS.dark
     },
     DescriptionInput: {
         width: "90%",
         paddingVertical: 12,
         paddingHorizontal: 16,
+        color: COLORS.dark
     },
     iconstyle: {
         width: 20,
@@ -146,10 +167,11 @@ const styles = StyleSheet.create({
     },
     loctaionInputandDollar: {
         width: "96%",
-        paddingHorizontal: 16
+        paddingHorizontal: 16,
+        color: COLORS.dark
     },
-    btn:{
-        width:"100%"
+    btn: {
+        width: "100%"
     }
 })
 
@@ -165,25 +187,3 @@ const styles = StyleSheet.create({
 
 
 
-
-
-// import { Image, KeyboardAvoidingView, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
-// import React from 'react'
-// import { COLORS, SIZES, icons } from '../../../../../constants'
-// import AppIcon from "react-native-vector-icons/AntDesign";
-// import RadioButton from './RadioButton';
-// import { AppButton } from '../../../../../component/appcomponent';
-// import EventHeaderInput from './EventHeaderInput';
-
-
-// const CreateInput = () => {
-//   return (
-//     <View>
-//         <EventHeaderInput />
-//     </View>
-//   )
-// }
-
-// export default CreateInput
-
-// const styles = StyleSheet.create({})

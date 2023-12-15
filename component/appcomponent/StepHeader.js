@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import AppIcon from 'react-native-vector-icons/AntDesign';
 import { COLORS, icons } from '../../constants';
 
-const StepHeader = () => {
+const StepHeader = ( {style} ) => {
   const steps = [
     { title: 'Event info', icon: icons.StepOne },
     { title: 'Delegate', icon: icons.StepTwo },
@@ -12,7 +12,7 @@ const StepHeader = () => {
   ];
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       {steps.map(({ title, icon }, index) => (
         <View key={index} style={styles.stepContainer}>
           <Image style={styles.icon} source={icon} />
@@ -34,6 +34,8 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     paddingHorizontal: 16,
     backgroundColor: COLORS.white,
+    borderWidth:1,
+    borderColor:COLORS.tertiary
   },
   stepContainer: {
     flexDirection: 'row',

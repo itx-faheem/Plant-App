@@ -8,11 +8,11 @@ const ForgotPass = ({navigation}) => {
         <View style={{ flex: 1, backgroundColor: COLORS.white }} >
             <AppHeader color={COLORS.black} onPress={()=>navigation.goBack()}  />
             <View style={styles.warpper} >
-                <View style={{gap:5}} > 
+                <View style={{gap:5, justifyContent:"center",alignItems:"center"}} > 
                     <Text style={styles.ForgotPassText} >Forgot password</Text>
                     <Text style={styles.description} >Enter the email address associated with your account and we’ll send you a link to reset your password.</Text>
                 </View>
-                <View style={{gap:16}} >
+                <View style={{gap:16, justifyContent:"center",alignItems:"center"}} >
                     <TextInput 
                     style={styles.input}
                     placeholder='john@gmail.com' placeholderTextColor={COLORS.black} />
@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
     ForgotPassText:{
         fontSize:SIZES.xxxLarge,
         color:COLORS.black,
-        fontWeight:"800"
+        fontWeight:"800",
+        width:"100%",
     },
     description:{
         fontSize:SIZES.font,

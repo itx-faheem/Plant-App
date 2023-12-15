@@ -14,8 +14,8 @@ const Home = ( {navigation} ) => {
            />
         <View style={{paddingVertical:16, paddingHorizontal:16,gap:12,borderWidth:1,borderColor:COLORS.tertiary}} >
             <View style={styles.searchInputHome} >
-                <AppIcon name="search1" size={16}  />
-                <TextInput  style={styles.InputText}  placeholder='Search'   />
+                <AppIcon name="search1"  color={COLORS.gray} size={16}  />
+                <TextInput  style={styles.InputText}  placeholderTextColor={COLORS.lightGray}  placeholder='Search'   />
             </View>
             <View style={styles.filterInner} >
                 <Text style={{fontSize:SIZES.font, fontWeight:"700", color:COLORS.black}} >Your Events</Text>

@@ -1,12 +1,10 @@
 import CreateInput from "./CreateInput";
 import UploadFlay from "./UploadFlay";
 import RadioButton from "./RadioButton";
-import EventHeaderInput  from "./EventHeaderInput";
-
-
+import CreateBottomSheet from "./CreateBottomSheetScreen";
 export {
     UploadFlay,
     CreateInput,
     RadioButton,
-    EventHeaderInput,
+    CreateBottomSheet
 }

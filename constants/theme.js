@@ -9,7 +9,9 @@ const COLORS = {
   lightWhite: "#FAFAFC",
   black : "#000000",
   dark :"#1C2A2B",
-  lightGray :  "#344B67"
+  lightGray :  "#344B67",
+  orange : "#F6A531",
+  green :"#168062"
 };
 
 const WIDTH = {

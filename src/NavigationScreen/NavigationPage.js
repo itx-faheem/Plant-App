@@ -14,9 +14,12 @@ import {
 } from "./SignUpPages";
 import { AppButton, AppHeader } from '../../component/appcomponent';
 import BottomNavigation from './AddEventScreen/BottomTabNavigation/BottomNavigation';
-import  CreateEvent  from './AddEventScreen/CreateAnEvent/CreateEvent';
-// import { SignUpForm } from './SignUpPages/SignUpComponent';
-// import { OtpText } from './SignUpPages/OtpCodeComponet';
+import CreateEvent from './AddEventScreen/CreateAnEvent/CreateEvent';
+import CreateBottomSheetScreen from './AddEventScreen/CreateAnEvent/CreateEventCompnent/CreateBottomSheetScreen';
+import Delegates from './AddEventScreen/AddDelegatesFolder/Delegates';
+import 'react-native-gesture-handler'
+import MoreInfo from './AddEventScreen/MoreInfoFolder/MoreInfo';
+import Invite from './AddEventScreen/InvitedFolder/Invite';
 
 
 const HomeScreen = () => {
@@ -33,9 +36,9 @@ const HomeScreen = () => {
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}
-    // initialRouteName="OtpText"
+      // initialRouteName="defaultScreen"
     >
-      {/* <Stack.Screen name='OtpText' component={OtpText} /> */}
+      {/* <Stack.Screen name='defaultScreen' component={ListItems} /> */}
       {isSplashScreen ? (
         <Stack.Screen name="Splash" component={Splash} />
       ) : (
@@ -50,6 +53,9 @@ const HomeScreen = () => {
           <Stack.Screen name="LastScreen" component={LastScreen} />
           <Stack.Screen name='Home' component={BottomNavigation} />
           <Stack.Screen name='CreateEvent' component={CreateEvent} />
+          <Stack.Screen name='Delegates' component={Delegates} /> 
+          <Stack.Screen name='MoreInfo' component={MoreInfo} /> 
+          <Stack.Screen name='Invite' component={Invite} /> 
         </>
       )}
     </Stack.Navigator>
