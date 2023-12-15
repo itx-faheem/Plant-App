@@ -3,21 +3,30 @@ import React from 'react'
 import { AppHeader, StepHeader } from '../../../../component/appcomponent'
 import { COLORS } from '../../../../constants'
 import { InputandBtn } from '../AddDelegatesFolder/DelegatesComponets'
-import { ListInvite } from './InvitedFolderComponent'
+import { ListInvite, QrCode } from './InvitedFolderComponent'
 
 const Invite = ( {navigation} ) => {
   return (
-    <ScrollView>
-      <AppHeader backgroundColor={{backgroundColor:COLORS.tertiary}}  color={COLORS.black} 
+    <ScrollView
+    showsVerticalScrollIndicator={false}
+    >
+      <AppHeader backgroundColor={{backgroundColor:COLORS.secondary}}  color={COLORS.black} 
       onPress={()=>navigation.goBack()}
        title="Invite" />
-       <StepHeader style={{backgroundColor:COLORS.tertiary}}  />
+       <StepHeader style={styles.stepstyle}  />
        <InputandBtn  title="Send Invites" />
        <ListInvite />
+       <QrCode />
     </ScrollView>
   )
 }
 
 export default Invite
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  stepstyle:{
+    backgroundColor:COLORS.secondary,
+    borderWidth:1,
+    borderColor:COLORS.tertiary
+  }
+})

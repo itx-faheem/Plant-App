@@ -24,6 +24,7 @@ import LogoWhiteColor from "../assets/icons/LogoWhiteColor.png";
 import emaiIcon from "../assets/icons/emaiIcon.png";
 import emailVector from "../assets/icons/emailVector.png";
 import BudgetingColorIcon from "../assets/icons/BudgetingColorIcon.png";
+import Qrimg from "../assets/icons/Qrimg.png";
 
 export default {
   compass,
@@ -50,5 +51,6 @@ export default {
   LogoWhiteColor,
   emaiIcon,
   emailVector,
-  BudgetingColorIcon
+  BudgetingColorIcon,
+  Qrimg
 };
