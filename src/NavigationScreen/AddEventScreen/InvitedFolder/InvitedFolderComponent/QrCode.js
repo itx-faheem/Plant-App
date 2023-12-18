@@ -1,92 +1,106 @@
-import { Image, StyleSheet, Text, Touchable, TouchableOpacity, View, Dimensions, Alert } from 'react-native'
-import React from 'react'
-import { COLORS, SIZES, icons } from '../../../../../constants'
-import { AppButton } from '../../../../../component/appcomponent'
+import React from 'react';
+import { View, Text, TouchableOpacity, Image, Dimensions, Alert, StyleSheet } from 'react-native';
+import { AppButton } from '../../../../../component/appcomponent';
+import { COLORS, SIZES, icons } from '../../../../../constants';
 
 const QrCode = () => {
-    const Dimensionsheight = Dimensions.get("window").height
-    return (
-        <View style={{ flex: 1, minHeight: Dimensionsheight / 2.82, justifyContent: "space-between", }} >
-            <View style={{
-                backgroundColor: COLORS.white,
-                borderWidth: 1,
-                borderColor: COLORS.tertiary,
-                paddingVertical: 16,
-                paddingHorizontal: 14,
-                gap: 16,
-                // flex:1
-            }} >
-                <View style={{ gap: 16 }} >
-                    <View>
+  const { height } = Dimensions.get('window');
+  const minHeight = height / 2.82;
 
-                        <Text
-                            style={{
-                                color: COLORS.black,
-                                fontWeight: "600",
-                                fontSize: SIZES.font
-                            }}
-                        >Invite via link or QR code</Text>
-                    </View>
-                    <View style={{
-                        backgroundColor: COLORS.tertiary,
-                        width: "100%",
-                        paddingHorizontal: 16,
-                        paddingVertical: 12,
-                        borderRadius: 8
-                    }}
-                    >
-                        <Text
-                            style={{
-                                fontSize: SIZES.font,
-                                color: COLORS.black,
-                                fontWeight: "400"
-                            }}
-                        >plan.it/927390</Text>
-                    </View>
-                </View>
+  const handlePress = () => {
+    Alert.alert('Coming Soon');
+  };
 
-                <View style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "space-between"
-                }} >
-                    <AppButton
-                        style={styles.appBtn}
-                        title="Share" />
-                    <TouchableOpacity
-                    onPress={()=> Alert.alert("Comming Soon")}
-                        style={styles.qrcodeContainer} >
-                        <Image style={styles.qrcodeImg} source={icons.Qrimg} />
-                    </TouchableOpacity>
-                </View>
-
-
-            </View>
-            <View style={{ justifyContent: "center", alignItems: "center" }} >
-                <AppButton title="Continue" />
-            </View>
+  return (
+    <View style={styles.container}>
+      <View style={styles.qrCodeView}>
+        <View style={styles.textContainer}>
+          <Text style={styles.title}>Invite via link or QR code</Text>
         </View>
-    )
-}
-
-export default QrCode
+        <View style={styles.qrCodeTextContainer}>
+          <View style={styles.qrCodeTextBox}>
+            <Text style={styles.qrCodeText}>plan.it/927390</Text>
+          </View>
+        </View>
+        <View style={styles.buttonContainer}>
+          <AppButton style={styles.appBtn} title="Share" />
+          <TouchableOpacity onPress={handlePress} style={styles.qrCodeContainer}>
+            <Image style={styles.qrCodeImg} source={icons.Qrimg} />
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View style={styles.continueButtonContainer}>
+        <AppButton title="Continue" />
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-    appBtn: {
-        height: 40,
-        width: "85%"
-    },
-    qrcodeContainer: {
-        height: 40,
-        borderWidth: 1,
-        width: 40,
-        borderColor: COLORS.tertiary,
-        justifyContent: "center", alignItems: "center",
-        borderRadius: 20
-    },
-    qrcodeImg: {
-        width: 13,
-        height: 13,
+  container: {
+    flex: 1,
+    minHeight: Dimensions.get('window').height / 2.82,
+    justifyContent: 'space-between',
+  },
+  qrCodeView: {
+    backgroundColor: COLORS.white,
+    borderWidth: 1,
+    borderColor: COLORS.tertiary,
+    paddingVertical: 16,
+    paddingHorizontal: 14,
+    gap: 16,
+  },
+  textContainer: {
+    gap: 16,
+  },
+  title: {
+    color: COLORS.black,
+    fontWeight: '600',
+    fontSize: SIZES.font,
+  },
+  qrCodeTextContainer: {
+    backgroundColor: COLORS.tertiary,
+    width: '100%',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderRadius: 8,
+  },
+  qrCodeTextBox: {
+    fontSize: SIZES.font,
+    color: COLORS.black,
+    fontWeight: '400',
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  appBtn: {
+    height: 40,
+    width: '80%',
+  },
+  qrCodeContainer: {
+    height:40,
+    width:40,
+    borderRadius:22,
+    borderWidth:1,
+    borderColor:COLORS.tertiary,
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  qrCodeImg: {
+    width: 13,
+    height: 13,
+  },
+  continueButtonContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  qrCodeText:{
+    fontSize:SIZES.font,
+    color:COLORS.black,
+    fontWeight:"400",
+  }
+});
 
-    }
-})
+export default QrCode;

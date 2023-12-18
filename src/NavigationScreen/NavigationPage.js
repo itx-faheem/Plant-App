@@ -20,6 +20,8 @@ import Delegates from './AddEventScreen/AddDelegatesFolder/Delegates';
 import 'react-native-gesture-handler'
 import MoreInfo from './AddEventScreen/MoreInfoFolder/MoreInfo';
 import Invite from './AddEventScreen/InvitedFolder/Invite';
+import WorkScreen from "./WorkScreen";
+
 
 
 const HomeScreen = () => {
@@ -36,9 +38,9 @@ const HomeScreen = () => {
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}
-      // initialRouteName="defaultScreen"
+    // initialRouteName="defaultScreen"
     >
-      {/* <Stack.Screen name='defaultScreen' component={ListItems} /> */}
+      {/* <Stack.Screen name='defaultScreen' component={WorkScreen} /> */}
       {isSplashScreen ? (
         <Stack.Screen name="Splash" component={Splash} />
       ) : (
@@ -53,9 +55,9 @@ const HomeScreen = () => {
           <Stack.Screen name="LastScreen" component={LastScreen} />
           <Stack.Screen name='Home' component={BottomNavigation} />
           <Stack.Screen name='CreateEvent' component={CreateEvent} />
-          <Stack.Screen name='Delegates' component={Delegates} /> 
-          <Stack.Screen name='MoreInfo' component={MoreInfo} /> 
-          <Stack.Screen name='Invite' component={Invite} /> 
+          <Stack.Screen name='Delegates' component={Delegates} />
+          <Stack.Screen name='MoreInfo' component={MoreInfo} />
+          <Stack.Screen name='Invite' component={Invite} />
         </>
       )}
     </Stack.Navigator>

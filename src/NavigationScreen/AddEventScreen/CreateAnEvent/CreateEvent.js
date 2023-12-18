@@ -20,6 +20,7 @@ const CreateEvent = ({ navigation }) => {
 
     return (
         <ScrollView
+        showsVerticalScrollIndicator={false}
             contentContainerStyle={{
                 flexGrow: 1,
                 justifyContent: "center",
