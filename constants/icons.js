@@ -25,6 +25,9 @@ import emaiIcon from "../assets/icons/emaiIcon.png";
 import emailVector from "../assets/icons/emailVector.png";
 import BudgetingColorIcon from "../assets/icons/BudgetingColorIcon.png";
 import Qrimg from "../assets/icons/Qrimg.png";
+import Tick from "../assets/icons/Tick.png";
+import LastTick from "../assets/icons/LastTick.png";
+import eventImg from "../assets/icons/eventImg.png";
 
 export default {
   compass,
@@ -52,5 +55,8 @@ export default {
   emaiIcon,
   emailVector,
   BudgetingColorIcon,
-  Qrimg
+  Qrimg,
+  Tick,
+  LastTick,
+  eventImg
 };

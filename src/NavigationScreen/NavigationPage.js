@@ -21,6 +21,8 @@ import 'react-native-gesture-handler'
 import MoreInfo from './AddEventScreen/MoreInfoFolder/MoreInfo';
 import Invite from './AddEventScreen/InvitedFolder/Invite';
 import WorkScreen from "./WorkScreen";
+import InvitQRcode from './AddEventScreen/InvitedFolder/InvitedFolderComponent/InvitQRcode';
+import CreatedEvent from './AddEventScreen/LastEventCreated.js/CreatedEvent';
 
 
 
@@ -57,7 +59,8 @@ const HomeScreen = () => {
           <Stack.Screen name='CreateEvent' component={CreateEvent} />
           <Stack.Screen name='Delegates' component={Delegates} />
           <Stack.Screen name='MoreInfo' component={MoreInfo} />
-          <Stack.Screen name='Invite' component={Invite} />
+          <Stack.Screen name='Invite' component={Invite} /> 
+          <Stack.Screen name='CreatedEvent' component={CreatedEvent} /> 
         </>
       )}
     </Stack.Navigator>
