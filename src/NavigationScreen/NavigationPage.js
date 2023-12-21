@@ -23,6 +23,7 @@ import Invite from './AddEventScreen/InvitedFolder/Invite';
 import WorkScreen from "./WorkScreen";
 import InvitQRcode from './AddEventScreen/InvitedFolder/InvitedFolderComponent/InvitQRcode';
 import CreatedEvent from './AddEventScreen/LastEventCreated.js/CreatedEvent';
+import { QrCode } from './AddEventScreen/InvitedFolder/InvitedFolderComponent';
 
 
 
@@ -42,7 +43,7 @@ const HomeScreen = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}
     // initialRouteName="defaultScreen"
     >
-      {/* <Stack.Screen name='defaultScreen' component={WorkScreen} /> */}
+      {/* <Stack.Screen name='defaultScreen' component={QrCode} /> */}
       {isSplashScreen ? (
         <Stack.Screen name="Splash" component={Splash} />
       ) : (

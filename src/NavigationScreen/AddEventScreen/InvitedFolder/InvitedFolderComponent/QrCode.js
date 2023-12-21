@@ -1,20 +1,25 @@
-import React, { useRef,useState } from 'react';
-import { View, Text, TouchableOpacity, Image, Dimensions, Alert, StyleSheet } from 'react-native';
+import React, { useRef, useState } from 'react';
+import {
+    View, Text,
+    TouchableOpacity,
+    Image, Dimensions,
+    StyleSheet
+} from 'react-native';
 import { AppButton } from '../../../../../component/appcomponent';
 import { COLORS, SIZES, icons } from '../../../../../constants';
 import InvitQRcode from "./InvitQRcode";
 
+const heightDimensions = Dimensions.get('window').height;
 
-const QrCode = ({ navigation, onPress, }) => {
-    const [showQRCode, setShowQRCode] = useState(false);
-    const { height } = Dimensions.get('window');
-    const minHeight = height / 2.82;
+const QrCode = ({ navigation, onPress, bref }) => {
     const bottomSheetRef = useRef(null);
+    const [showQRCode, setShowQRCode] = useState(false); // Corrected state declaration
 
     const handlePress = () => {
-        setShowQRCode(false); 
-        bottomSheetRef?.current?.expand();
-    }
+        setShowQRCode(true);
+        bottomSheetRef.current?.expand()
+    };
+
     return (
         <>
             <View style={styles.container}>
@@ -30,32 +35,28 @@ const QrCode = ({ navigation, onPress, }) => {
                     <View style={styles.buttonContainer}>
                         <AppButton style={styles.appBtn} title="Share" />
                         <TouchableOpacity
-                            onPress={() => handlePress()}
+                            onPress={handlePress}
                             style={styles.qrCodeContainer}>
-                            <Image style={styles.qrCodeImg}
-                                source={icons.Qrimg} />
+                            <Image style={styles.qrCodeImg} source={icons.Qrimg} />
                         </TouchableOpacity>
-
                     </View>
                 </View>
-                <View style={styles.continueButtonContainer}>
-                    {showQRCode && (
-                        <InvitQRcode bref={bottomSheetRef} />
-                    )}
+                <View style={{ justifyContent: "center", alignItems: "center" }} >
+                    <AppButton onPress={onPress} title="Continue" />
                 </View>
             </View>
-            <InvitQRcode
-                bref={bottomSheetRef}
-            />
+            {showQRCode && (
+                <InvitQRcode bref={bottomSheetRef} />
+            )}
         </>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        minHeight: Dimensions.get('window').height / 2.82,
+        minHeight: heightDimensions - heightDimensions / 1.603,
         justifyContent: 'space-between',
+        paddingBottom: 16
     },
     qrCodeView: {
         backgroundColor: COLORS.white,
@@ -107,6 +108,7 @@ const styles = StyleSheet.create({
     qrCodeImg: {
         width: 13,
         height: 13,
+        resizeMode: "contain"
     },
     continueButtonContainer: {
         justifyContent: 'center',
@@ -120,4 +122,10 @@ const styles = StyleSheet.create({
 });
 
 export default QrCode;
+
+
+
+
+
+
 

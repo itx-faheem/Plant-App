@@ -6,8 +6,10 @@ import { HeaderNameLastEvent, LastEventDescription } from './LastEventComponent'
 const CreatedEvent = () => {
     return (
         <View style={styles.container} >
+            <View style={{top:"10%",gap:40, justifyContent:"center",alignItems:"center"}} >
             <HeaderNameLastEvent />
             <LastEventDescription />
+            </View>
         </View>
     )
 }
@@ -20,6 +22,5 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.primary,
         justifyContent: "center",
         alignItems: "center",
-        gap:40
     }
 })

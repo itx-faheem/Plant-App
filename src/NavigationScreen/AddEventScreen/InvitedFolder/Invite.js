@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react'
-import { AppHeader, StepHeader } from '../../../../component/appcomponent'
+import { AppButton, AppHeader, StepHeader } from '../../../../component/appcomponent'
 import { COLORS } from '../../../../constants'
 import { InputandBtn } from '../AddDelegatesFolder/DelegatesComponets'
 import { ListInvite, QrCode } from './InvitedFolderComponent'
@@ -12,15 +12,18 @@ const Invite = ({ navigation }) => {
     <ScrollView
       showsVerticalScrollIndicator={false}
     >
-      {/* <GestureHandlerRootView> */}
-        <AppHeader backgroundColor={{ backgroundColor: COLORS.secondary }} color={COLORS.black}
-          onPress={() => navigation.goBack()}
-          title="Invite" />
-        <StepHeader style={styles.stepstyle} />
-        <InputandBtn title="Send Invites" />
-        <ListInvite />
-        <QrCode onPress={() => navigation.push("CreatedEvent")} />
-      {/* </GestureHandlerRootView> */}
+      <AppHeader
+        backgroundColor={{ backgroundColor: COLORS.secondary }}
+        color={COLORS.black}
+        onPress={() => navigation.goBack()}
+        title="Invite" />
+      <StepHeader style={styles.stepstyle} />
+      <InputandBtn title="Send Invites" />
+      <ListInvite />
+      <QrCode
+       onPress={() => navigation.push("CreatedEvent")}
+        />
+        
     </ScrollView>
   )
 }

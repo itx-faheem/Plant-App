@@ -6,7 +6,7 @@ import LinkandQRcode from './LinkandQRcode';
 import { COLORS } from '../../../../../constants';
 const  heightDimensions  = Dimensions.get('screen').height;
 
-const InvitQRcode = ({ bref,onClose}) => {
+const InvitQRcode = ({ bref,onClose }) => {
     const snapPoints = useMemo(() => ['75%', '75%'], []);
 
     const toggleFunction = () => {

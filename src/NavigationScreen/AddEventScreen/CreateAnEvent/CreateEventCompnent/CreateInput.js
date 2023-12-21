@@ -34,8 +34,8 @@ const CreateInput = ({ onPress }) => {
     )
 
     const DataTIme = () => (
-        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 10 }} >
-            <View>
+        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 10,}} >
+            <View style={{gap:4}} >
                 <Text style={styles.inputNames} >Event Date</Text>
                 <View style={styles.dateandTimewarpper} >
                     <Image style={styles.iconstyle} source={icons.date} />
@@ -47,7 +47,7 @@ const CreateInput = ({ onPress }) => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <View>
+            <View style={{gap:4}} >
                 <Text style={styles.inputNames} >Event Time</Text>
                 <View style={styles.dateandTimewarpper} >
                     <Image style={styles.iconstyle} source={icons.time} />
