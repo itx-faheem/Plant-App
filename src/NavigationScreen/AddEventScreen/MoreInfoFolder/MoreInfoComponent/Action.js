@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity,Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import AppIcon from 'react-native-vector-icons/AntDesign';
 import { COLORS, SIZES, icons } from '../../../../../constants';
 import { AppButton } from '../../../../../component/appcomponent';
@@ -7,7 +7,7 @@ import { AppButton } from '../../../../../component/appcomponent';
 const Dimensionsheight = Dimensions.get("screen").height
 
 
-const Action = ( {onPress} ) => {
+const Action = ({ onPress, AddSuppliesPress, addtaskaction }) => {
 
     const actionContainerStyle = {
         backgroundColor: COLORS.tertiary,
@@ -20,35 +20,39 @@ const Action = ( {onPress} ) => {
     };
 
     return (
-        <View style={{flex:1, justifyContent:"space-between", minHeight:Dimensionsheight/2}} >
-        <View style={styles.container}>
-            <View style={styles.section}>
-                <Text style={{fontSize:SIZES.font, color:COLORS.black, fontWeight:"600"}} >Quick Action</Text>
-                <View style={styles.actionItem}>
-                    <TouchableOpacity activeOpacity={0.5} style={actionContainerStyle}>
-                        <View style={styles.taskContainer}>
-                            <Image style={styles.iconStyle} source={icons.Tasks} />
-                        </View>
-                        <Text style={styles.actionText}>Add Tasks</Text>
-                    </TouchableOpacity>
-                    <Text style={styles.description}>Add tasks and assign them to specific delegates</Text>
+        <View style={{ flex: 1, justifyContent: "space-between", minHeight: Dimensionsheight / 2 }} >
+            <View style={styles.container}>
+                <View style={styles.section}>
+                    <Text style={{ fontSize: SIZES.font, color: COLORS.black, fontWeight: "600" }} >Quick Action</Text>
+                    <View style={styles.actionItem}>
+                        <TouchableOpacity
+                        onPress={addtaskaction}
+                            activeOpacity={0.5} style={actionContainerStyle}>
+                            <View style={styles.taskContainer}>
+                                <Image style={styles.iconStyle} source={icons.Tasks} />
+                            </View>
+                            <Text style={styles.actionText}>Add Tasks</Text>
+                        </TouchableOpacity>
+                        <Text style={styles.description}>Add tasks and assign them to specific delegates</Text>
+                    </View>
+                </View>
+                <View style={styles.section}>
+                    <View style={styles.actionItem} >
+                        <TouchableOpacity
+                        onPress={AddSuppliesPress}
+                            activeOpacity={0.5} style={actionContainerStyle}>
+                            <View style={[styles.taskContainer, styles.soft]}>
+                                <AppIcon name="plus" color={COLORS.white} size={15} />
+                            </View>
+                            <Text style={styles.actionText}>Add Supplies</Text>
+                        </TouchableOpacity>
+                        <Text style={styles.description}>Manage supplies with budget to manage</Text>
+                    </View>
                 </View>
             </View>
-            <View style={styles.section}>
-                <View style={styles.actionItem} >
-                    <TouchableOpacity activeOpacity={0.5} style={actionContainerStyle}>
-                        <View style={[styles.taskContainer, styles.soft]}>
-                            <AppIcon name="plus" color={COLORS.white} size={15} />
-                        </View>
-                        <Text style={styles.actionText}>Add Supplies</Text>
-                    </TouchableOpacity>
-                    <Text style={styles.description}>Manage supplies with budget to manage</Text>
-                </View>
+            <View style={{ justifyContent: "center", alignItems: "center" }} >
+                <AppButton title="Continue" onPress={onPress} />
             </View>
-        </View>
-        <View style={{justifyContent:"center",alignItems:"center"}} >
-            <AppButton title="Continue" onPress={onPress}  />
-        </View>
         </View>
     );
 };
@@ -93,8 +97,8 @@ const styles = StyleSheet.create({
         fontWeight: '400',
         lineHeight: 19,
     },
-    soft:{
-        backgroundColor:COLORS.soft
+    soft: {
+        backgroundColor: COLORS.soft
     }
 });
 

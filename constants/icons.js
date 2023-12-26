@@ -28,6 +28,9 @@ import Qrimg from "../assets/icons/Qrimg.png";
 import Tick from "../assets/icons/Tick.png";
 import LastTick from "../assets/icons/LastTick.png";
 import eventImg from "../assets/icons/eventImg.png";
+import addIcon from "../assets/icons/addIcon.png";
+import circularDollar from "../assets/icons/circularDollar.png";
+import addAssginIcon from "../assets/icons/addAssginIcon.png";
 
 export default {
   compass,
@@ -58,5 +61,8 @@ export default {
   Qrimg,
   Tick,
   LastTick,
-  eventImg
+  eventImg,
+  addIcon,
+  circularDollar,
+  addAssginIcon
 };

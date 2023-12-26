@@ -50,7 +50,9 @@ const ListInvite = () => {
                                     fontWeight:"600"
                                 }}
                                 >{item.name}</Text>
-                                <Text>{item.emailorPhone}</Text>
+                                <Text
+                                style={{fontSize:SIZES.medium,color:COLORS.gray}}
+                                 >{item.emailorPhone}</Text>
                             </View>
                         </View>
                         <View

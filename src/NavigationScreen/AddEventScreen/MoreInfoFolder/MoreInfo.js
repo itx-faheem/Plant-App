@@ -5,7 +5,7 @@ import { COLORS } from '../../../../constants'
 import { Action, AddBudgetEvent } from './MoreInfoComponent'
 
 
-const MoreInfo = ({ navigation }) => {
+const MoreInfo = ({ navigation,  }) => {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -15,7 +15,11 @@ const MoreInfo = ({ navigation }) => {
         color={COLORS.black} title="More Info" backgroundColor={{ backgroundColor: COLORS.secondary }} />
       <StepHeader style={{ backgroundColor: COLORS.secondary }} />
       <AddBudgetEvent />
-      <Action onPress={()=>navigation.push("Invite")}  />
+      <Action
+      addtaskaction={()=>navigation.push("AddTaskFileAction")}
+        onPress={() => navigation.push("Invite")}
+        AddSuppliesPress={()=>navigation.push("DelegatesSupplies")}
+      />
     </ScrollView>
   )
 }

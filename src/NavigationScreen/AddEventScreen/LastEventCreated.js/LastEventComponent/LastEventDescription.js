@@ -23,6 +23,7 @@ const LastEventDescription = () => {
                 <AppButton 
                 style={{ 
                     backgroundColor:COLORS.white,
+                    width: "85%",
                  }}
                  color={{color:COLORS.black}}
                 title="View Event" />

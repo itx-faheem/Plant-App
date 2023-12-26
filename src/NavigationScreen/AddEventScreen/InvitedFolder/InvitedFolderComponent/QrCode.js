@@ -13,7 +13,7 @@ const heightDimensions = Dimensions.get('window').height;
 
 const QrCode = ({ navigation, onPress, bref }) => {
     const bottomSheetRef = useRef(null);
-    const [showQRCode, setShowQRCode] = useState(false); // Corrected state declaration
+    const [showQRCode, setShowQRCode] = useState(false); 
 
     const handlePress = () => {
         setShowQRCode(true);

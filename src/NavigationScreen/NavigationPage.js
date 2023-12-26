@@ -24,6 +24,9 @@ import WorkScreen from "./WorkScreen";
 import InvitQRcode from './AddEventScreen/InvitedFolder/InvitedFolderComponent/InvitQRcode';
 import CreatedEvent from './AddEventScreen/LastEventCreated.js/CreatedEvent';
 import { QrCode } from './AddEventScreen/InvitedFolder/InvitedFolderComponent';
+import DelegatesSupplies from './AddEventScreen/MoreInfoFolder/SuppliesFolder/DelegatesSupplies';
+import AddTaskFileAction from './AddEventScreen/MoreInfoFolder/AddTaskFinancialFolder/AddTaskFileAction';
+import AppBottomSheet from '../../component/appcomponent/AppBottomSheet';
 
 
 
@@ -43,7 +46,7 @@ const HomeScreen = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}
     // initialRouteName="defaultScreen"
     >
-      {/* <Stack.Screen name='defaultScreen' component={QrCode} /> */}
+      {/* <Stack.Screen name='defaultScreen' component={AppBottomSheet} /> */}
       {isSplashScreen ? (
         <Stack.Screen name="Splash" component={Splash} />
       ) : (
@@ -60,8 +63,10 @@ const HomeScreen = () => {
           <Stack.Screen name='CreateEvent' component={CreateEvent} />
           <Stack.Screen name='Delegates' component={Delegates} />
           <Stack.Screen name='MoreInfo' component={MoreInfo} />
-          <Stack.Screen name='Invite' component={Invite} /> 
-          <Stack.Screen name='CreatedEvent' component={CreatedEvent} /> 
+          <Stack.Screen name='Invite' component={Invite} />
+          <Stack.Screen name='CreatedEvent' component={CreatedEvent} />
+          <Stack.Screen name='DelegatesSupplies' component={DelegatesSupplies} />
+          <Stack.Screen name='AddTaskFileAction' component={AddTaskFileAction} />
         </>
       )}
     </Stack.Navigator>
