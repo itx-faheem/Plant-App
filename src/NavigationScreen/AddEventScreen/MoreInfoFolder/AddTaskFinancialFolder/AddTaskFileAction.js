@@ -1,23 +1,201 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { FinancialHeader, Collapfile, Tasksfile } from './AddTaskFinancialFolderComponent'
-import { FinancialInput, FinancialPlus } from './AddTaskFinancialFolderComponent/InputFinancialOverView'
-import MainBottomOverView from './AddTaskFinancialFolderComponent/BottomComponentOverView/MainBottomOverView'
+// import React, { useRef, useMemo, useState } from 'react';
+// import { ScrollView, StyleSheet, Text, View, Dimensions, Pressable } from 'react-native';
+// import { FinancialHeader, Collapfile, Tasksfile } from './AddTaskFinancialFolderComponent';
+// import { FinancialInput, FinancialPlus } from './AddTaskFinancialFolderComponent/InputFinancialOverView';
+// import MainBottomOverView from './AddTaskFinancialFolderComponent/BottomComponentOverView/MainBottomOverView';
+// import AppBottomSheet from '../../../../../component/appcomponent/AppBottomSheet';
+// import AssignBottomComponent from './AddTaskFinancialFolderComponent/BottomComponentOverView/AssignBottomComponent';
 
+// const heightDimensions = Dimensions.get('window').height; // Use 'window' instead of 'screen'
+
+// const AddTaskFileAction = ({ navigation, ref }) => {
+
+//     const [showSheet, setshowSheet] = useState(false);
+//     const bref = useRef(null);
+//     const snapPoints = useMemo(() => ['34%', '34%'], []);
+
+//     const handlePress = () => {
+//         bref.current.expand();
+//         setshowSheet(true);
+//     };
+//     const onCloseFunction = () => {
+//         bref.current.close();
+//     }
+
+//     return (
+//         <>
+//             <ScrollView showsVerticalScrollIndicator={true}>
+//                 <FinancialHeader onbackCross={() => navigation.goBack()} />
+//                 <View>
+//                     <Tasksfile />
+//                     <Collapfile />
+//                     <FinancialInput />
+//                     <FinancialPlus />
+//                     <MainBottomOverView handlePress={handlePress} />
+//                 </View>
+//             </ScrollView>
+//             {
+//                 showSheet &&
+//                 <AppBottomSheet
+//                     bref={bref} snapPoints={snapPoints}
+//                     cancleBtn={onCloseFunction}
+//                     backdropComponent={() => (
+//                         <Pressable onPress={onCloseFunction}
+//                             style={styles.PressableInner} />
+//                     )}
+//                     save="Save"
+//                 >
+//                     <AssignBottomComponent />
+//                 </AppBottomSheet>
+
+//             }
+//         </>
+//     );
+// };
+
+// export default AddTaskFileAction;
+
+// const styles = StyleSheet.create({
+//     PressableInner: {
+//         width: '100%',
+//         height: heightDimensions,
+//         flex: 1,
+//         backgroundColor: 'rgba(0, 0, 0, 0.8)',
+//         position: 'absolute',
+//     },
+// });
+
+
+
+
+// import React, { useRef, useMemo, useState } from 'react';
+// import { ScrollView, StyleSheet, Text, View, Dimensions, Pressable } from 'react-native';
+// import { FinancialHeader, Collapfile, Tasksfile } from './AddTaskFinancialFolderComponent';
+// import { FinancialInput, FinancialPlus } from './AddTaskFinancialFolderComponent/InputFinancialOverView';
+// import MainBottomOverView from './AddTaskFinancialFolderComponent/BottomComponentOverView/MainBottomOverView';
+// import AppBottomSheet from '../../../../../component/appcomponent/AppBottomSheet';
+// import AssignBottomComponent from './AddTaskFinancialFolderComponent/BottomComponentOverView/AssignBottomComponent';
+
+// const heightDimensions = Dimensions.get('window').height;
+// const AddTaskFileAction = ({ navigation }) => {
+//     const [showSheet, setshowSheet] = useState(false);
+//     const bottomSheetRef = useRef(null);
+//     const snapPoints = useMemo(() => ['34%', '34%'], []);
+
+//     const handlePress = () => {
+//         setshowSheet(true);
+
+//     };
+
+//     const onCloseFunction = () => {
+//         bottomSheetRef.current.close();
+//     };
+//     return (
+//         <>
+//             <ScrollView showsVerticalScrollIndicator={true}>
+//                 <FinancialHeader onbackCross={() => navigation.goBack()} />
+//                 <View>
+//                     <Tasksfile />
+//                     <Collapfile />
+//                     <FinancialInput />
+//                     <FinancialPlus />
+//                     <MainBottomOverView handlePress={handlePress} />
+//                 </View>
+//             </ScrollView>
+//             {showSheet && (
+//                 <AppBottomSheet
+//                     ref={bottomSheetRef}
+//                     snapPoints={snapPoints}
+//                     cancleBtn={onCloseFunction}
+//                     backdropComponent={() => (
+//                         <Pressable onPress={onCloseFunction} style={styles.PressableInner} />
+//                     )}
+//                     save="Save"
+//                 >
+//                     <AssignBottomComponent />
+//                 </AppBottomSheet>
+//             )}
+//         </>
+//     );
+// };
+
+// export default AddTaskFileAction;
+
+// const styles = StyleSheet.create({
+//     PressableInner: {
+//         width: '100%',
+//         height: heightDimensions,
+//         backgroundColor: 'rgba(0, 0, 0, 0.8)',
+//         position: 'absolute',
+//     },
+// });
+
+
+import React, { useRef, useMemo, useState } from 'react';
+import { ScrollView, StyleSheet, Text, View, Dimensions, Pressable, Alert } from 'react-native';
+import {
+    FinancialHeader,
+    Collapfile,
+    Tasksfile,
+} from './AddTaskFinancialFolderComponent';
+import {
+    FinancialInput,
+    FinancialPlus,
+} from './AddTaskFinancialFolderComponent/InputFinancialOverView';
+import MainBottomOverView from './AddTaskFinancialFolderComponent/BottomComponentOverView/MainBottomOverView';
+import AppBottomSheet from '../../../../../component/appcomponent/AppBottomSheet';
+import AssignBottomComponent from './AddTaskFinancialFolderComponent/BottomComponentOverView/AssignBottomComponent';
+
+const heightDimensions = Dimensions.get('window').height;
 const AddTaskFileAction = ({ navigation }) => {
-    return (
-        <ScrollView showsVerticalScrollIndicator={true} >    
-            <FinancialHeader onbackCross={() => navigation.goBack()} />
-            <Tasksfile />
-            <Collapfile />
-            <FinancialInput />
-            <FinancialPlus />
-            <MainBottomOverView />
-        </ScrollView>
-    )
-}
+    const [showSheet, setshowSheet] = useState(false);
+    const bottomSheetRef = useRef(null);
+    const snapPoints = useMemo(() => ['34%', '34%'], []);
 
-export default AddTaskFileAction
+    const handlePress = () => {
+        setshowSheet(true);
+        bottomSheetRef?.current?.expand();
+
+    };
+
+    const onCloseFunction = () => {
+        setshowSheet(false);
+        bottomSheetRef.current?.close();
+    };
+    return (
+        <>
+            <ScrollView showsVerticalScrollIndicator={true}>
+                <FinancialHeader onbackCross={() => navigation.goBack()} />
+                <View>
+                    <Tasksfile />
+                    <Collapfile />
+                    <FinancialInput />
+                    <FinancialPlus />
+                    <MainBottomOverView handlePress={handlePress} bref={bottomSheetRef} />
+                </View>
+            </ScrollView>
+            {showSheet && (
+                <AppBottomSheet
+                    ref={bottomSheetRef}
+                    snapPoints={snapPoints}
+                    cancleBtn={onCloseFunction}
+                    backdropComponent={() => <Pressable onPress={onCloseFunction} style={styles.PressableInner} />}
+                    save="Save"
+                >
+                    <AssignBottomComponent />
+                </AppBottomSheet>
+            )}
+        </>
+    );
+};
+
+export default AddTaskFileAction;
 
 const styles = StyleSheet.create({
-})
+    PressableInner: {
+        width: '100%',
+        height: heightDimensions,
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        position: 'absolute',
+    },
+});

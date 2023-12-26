@@ -1,45 +1,18 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { useMemo, useRef, useState } from 'react'
-import { COLORS, SIZES, icons } from '../../../../../../../constants'
-import AppIcon from "react-native-vector-icons/AntDesign";
-import AppBottomSheet from '../../../../../../../component/appcomponent/AppBottomSheet';
-
-const MainBottomOverView = () => {
-    const snapPoints = useMemo(() => ['50', "25"], [])
-    const bottomSheetRef = useRef(null);
-    const [handleBottomSheet, setHandleBottomSheet] = useState(false)
-    
-    const handlePress = () => {
-        setHandleBottomSheet(true)
-        bottomSheetRef.current?.expand()
-    }
+import { StyleSheet, Text, View, Dimensions } from 'react-native'
+import React, { useState, useMemo, useRef } from 'react'
+import AssignBottomSheetFile from './AssignBottomSheetFile'
+import PendingBottomSheet from './PendingBottomSheet'
+import DueBottomSheet from './DueBottomSheet'
+import { COLORS } from '../../../../../../../constants'
+const heightDimensions = Dimensions.get('screen').height;
+const MainBottomOverView = ({ handlePress, bref, snapPoints }) => {
 
     return (
-        <>
-            <View style={styles.container} >
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    style={styles.innerContainer}
-                    onPress={handlePress}
-                >
-                    <Image
-                        style={styles.iconStyle}
-                        source={icons.addAssginIcon} />
-                    <Text style={styles.AssignText} >Assign</Text>
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.5} style={styles.innerContainer} >
-                    <Text style={styles.pendingText} >Pending</Text>
-                    <AppIcon name='down' size={14} color={COLORS.orange} />
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.5} style={styles.innerContainer} >
-                    <AppIcon size={14} name='clockcircle' color={COLORS.black} />
-                    <Text style={styles.DueText} >Due</Text>
-                </TouchableOpacity>
-            </View>
-            {
-                handleBottomSheet && <AppBottomSheet snapPoints={snapPoints} ref={bottomSheetRef} />
-            }
-        </>
+        <View style={styles.container}>
+            <AssignBottomSheetFile handlePress={handlePress} bref={bref} snapPoints={snapPoints} />
+            <PendingBottomSheet />
+            <DueBottomSheet />
+        </View>
     )
 }
 
@@ -50,39 +23,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         backgroundColor: COLORS.white,
+        paddingHorizontal: 16,
         paddingVertical: 10,
-        paddingHorizontal: 16,
         gap: 7
-    },
-    innerContainer: {
-        flexDirection: "row",
-        alignItems: "center",
-        borderWidth: 1,
-        borderColor: COLORS.tertiary,
-        paddingVertical: 8,
-        paddingHorizontal: 16,
-        gap: 6,
-        borderRadius: 100
-    },
-    iconStyle: {
-        width: 16,
-        height: 16,
-        resizeMode: "contain",
-        tintColor: COLORS.primary
-    },
-    AssignText: {
-        color: COLORS.primary,
-        fontWeight: "600",
-        fontSize: SIZES.font
-    },
-    pendingText: {
-        color: COLORS.orange,
-        fontWeight: "600",
-        fontSize: SIZES.font
-    },
-    DueText: {
-        color: COLORS.black,
-        fontWeight: "600",
-        fontSize: SIZES.font
     }
 })

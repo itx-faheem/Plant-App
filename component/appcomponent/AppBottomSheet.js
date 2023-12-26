@@ -1,44 +1,53 @@
-import React, { useMemo, useRef } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Pressable } from 'react-native';
+import React, { useMemo, useRef, useState } from 'react';
+import { StyleSheet, Text,Dimensions, View, TouchableOpacity, Pressable } from 'react-native';
 import BottomSheetModal from '@gorhom/bottom-sheet';
 import { COLORS, SIZES } from '../../constants';
 
-const AppBottomSheet = ({ onClose, onChange, children }) => {
-  const snapPoints = useMemo(() => ['50%', '25%'], []);
+
+
+const  heightDimensions  = Dimensions.get('screen').height;
+
+const AppBottomSheet = ({ onClose, onChange, children, snapPoints, bref, backdropComponent, cancleBtn, save }) => {
+  // const snapPoints = useMemo(() => ['50%', '25%'], []);
   const bottomSheetRef = useRef(null);
+  // const snapPoints = useMemo(() => ['75%', '75%'], []);
+
+  const toggleFunction = () => {
+    bref?.current.close();
+  };
+
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
+
 
   return (
     <>
       <BottomSheetModal
-        ref={bottomSheetRef}
+        ref={bref}
         snapPoints={snapPoints}
         enablePanDownToClose={true}
         animateOnMount={true}
         onClose={() => {
+          setIsSheetOpen(false);
           onClose
         }}
-        onChange={onChange}
+        onChange={(index) => {
+          setIsSheetOpen(index === 1);
+        }}
         handleIndicatorStyle={styles.indicatorStyle}
-        backdropComponent={() => (
-          <Pressable
-            onPress={() => bottomSheetRef.current.close()}
-            style={{
-              flex: 1,
-              backgroundColor:"rbga(0,0,0,0.5)",
-            }}
-          />
-        )}
+        backdropComponent={backdropComponent}
+        
       >
         <View>
           <View style={styles.headerBottomSheet}>
             <TouchableOpacity
-            onPress={()=>bottomSheetRef.current.close()}
+              onPress={cancleBtn}
             >
               <Text style={styles.cancelBtn}>Cancel</Text>
             </TouchableOpacity>
             <Text style={styles.assText}>Assign to</Text>
             <TouchableOpacity>
-              <Text style={styles.saveText}>Done</Text>
+              <Text style={styles.saveText}>{save}</Text>
             </TouchableOpacity>
           </View>
           {children}
@@ -55,7 +64,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 16,
-    paddingTop: 16,
+    paddingVertical:10,
   },
   indicatorStyle: {
     backgroundColor: COLORS.white,
