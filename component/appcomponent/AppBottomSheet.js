@@ -1,13 +1,13 @@
 import React, { useMemo, useRef, useState } from 'react';
-import { StyleSheet, Text,Dimensions, View, TouchableOpacity, Pressable } from 'react-native';
+import { StyleSheet, Text, Dimensions, View, TouchableOpacity, Pressable } from 'react-native';
 import BottomSheetModal from '@gorhom/bottom-sheet';
 import { COLORS, SIZES } from '../../constants';
 
 
 
-const  heightDimensions  = Dimensions.get('screen').height;
+const heightDimensions = Dimensions.get('screen').height;
 
-const AppBottomSheet = ({ onClose, onChange, children, snapPoints, bref, backdropComponent, cancleBtn, save }) => {
+const AppBottomSheet = ({ onClose, onChange, children, snapPoints, bref, backdropComponent, cancleBtn, save, cancelprops, titleProps }) => {
   // const snapPoints = useMemo(() => ['50%', '25%'], []);
   const bottomSheetRef = useRef(null);
   // const snapPoints = useMemo(() => ['75%', '75%'], []);
@@ -36,16 +36,16 @@ const AppBottomSheet = ({ onClose, onChange, children, snapPoints, bref, backdro
         }}
         handleIndicatorStyle={styles.indicatorStyle}
         backdropComponent={backdropComponent}
-        
+
       >
         <View>
           <View style={styles.headerBottomSheet}>
             <TouchableOpacity
               onPress={cancleBtn}
             >
-              <Text style={styles.cancelBtn}>Cancel</Text>
+              <Text style={styles.cancelBtn}>{cancelprops}</Text>
             </TouchableOpacity>
-            <Text style={styles.assText}>Assign to</Text>
+            <Text style={styles.assText}>{titleProps}</Text>
             <TouchableOpacity>
               <Text style={styles.saveText}>{save}</Text>
             </TouchableOpacity>
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 16,
-    paddingVertical:10,
+    paddingVertical: 10,
   },
   indicatorStyle: {
     backgroundColor: COLORS.white,

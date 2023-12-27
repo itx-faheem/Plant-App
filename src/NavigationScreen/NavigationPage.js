@@ -27,6 +27,8 @@ import { QrCode } from './AddEventScreen/InvitedFolder/InvitedFolderComponent';
 import DelegatesSupplies from './AddEventScreen/MoreInfoFolder/SuppliesFolder/DelegatesSupplies';
 import AddTaskFileAction from './AddEventScreen/MoreInfoFolder/AddTaskFinancialFolder/AddTaskFileAction';
 import AppBottomSheet from '../../component/appcomponent/AppBottomSheet';
+import HomeSearchbar from './AddEventScreen/HomeEventScreen/HomeComponent/HomeSearchbar';
+import { FilterBottomSheet } from './AddEventScreen/HomeEventScreen/HomeComponent';
 
 
 
@@ -46,7 +48,7 @@ const HomeScreen = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}
     // initialRouteName="defaultScreen"
     >
-      {/* <Stack.Screen name='defaultScreen' component={AppBottomSheet} /> */}
+      {/* <Stack.Screen name='defaultScreen' component={FilterBottomSheet} /> */}
       {isSplashScreen ? (
         <Stack.Screen name="Splash" component={Splash} />
       ) : (
@@ -67,6 +69,7 @@ const HomeScreen = () => {
           <Stack.Screen name='CreatedEvent' component={CreatedEvent} />
           <Stack.Screen name='DelegatesSupplies' component={DelegatesSupplies} />
           <Stack.Screen name='AddTaskFileAction' component={AddTaskFileAction} />
+          <Stack.Screen name='HomeSearchbar' component={HomeSearchbar} />
         </>
       )}
     </Stack.Navigator>

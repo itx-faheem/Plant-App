@@ -1,56 +1,88 @@
-import { StyleSheet, Text, View,TextInput, Image,TouchableOpacity } from 'react-native'
-import React from 'react'
-import { HomeHeaderBar, NoEvent } from './HomeComponent'
-import AppIcon from "react-native-vector-icons/AntDesign";
+import React, { useRef, useMemo, useState } from 'react';
+import { View, Text, Image, TouchableOpacity, Pressable, Dimensions, StyleSheet } from 'react-native';
+import AppIcon from 'react-native-vector-icons/AntDesign';
 import { COLORS, SIZES, icons } from '../../../../constants';
+import AppBottomSheet from '../../../../component/appcomponent/AppBottomSheet';
+import { FilterBottomSheet, HomeHeaderBar, NoEvent } from './HomeComponent';
 
+const heightDimensions = Dimensions.get('screen').height;
 
+const Home = ({ navigation,handlePress }) => {
+    const [isModalVisible, setModalVisible] = useState(false);
 
-const Home = ( {navigation} ) => {
-  return (
-    <View style={{flex:1}} >
-        <HomeHeaderBar
-         onPress={()=>navigation.push("CreateEvent")}
-           />
-        <View style={{paddingVertical:16, paddingHorizontal:16,gap:12,borderWidth:1,borderColor:COLORS.tertiary}} >
-            <View style={styles.searchInputHome} >
-                <AppIcon name="search1"  color={COLORS.gray} size={16}  />
-                <TextInput  style={styles.InputText}  placeholderTextColor={COLORS.lightGray}  placeholder='Search'   />
+    const handlepress = () => {
+        setModalVisible(true)
+    }
+
+    const onClose = () =>{
+        setModalVisible(false)
+    }
+
+    return (
+        <>
+            <View style={{ flex: 1, zIndex: 0 }}>
+                <HomeHeaderBar onPress={() => navigation.push('CreateEvent')} />
+                <View style={{ paddingVertical: 16, paddingHorizontal: 16, gap: 12, borderWidth: 1, borderColor: COLORS.tertiary }}>
+                    <Pressable onPress={() => navigation.push('HomeSearchbar')} style={styles.searchInputHome}>
+                        <AppIcon name="search1" color={COLORS.gray} size={18} />
+                        <Text style={styles.inputText}>Search</Text>
+                    </Pressable>
+                    <View style={styles.filterInner}>
+                        <Text style={{ fontSize: SIZES.font, fontWeight: '700', color: COLORS.black }}>Your Events</Text>
+                        <TouchableOpacity onPress={handlepress} activeOpacity={0.5}>
+                            <Image source={icons.filter} />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                <NoEvent />
             </View>
-            <View style={styles.filterInner} >
-                <Text style={{fontSize:SIZES.font, fontWeight:"700", color:COLORS.black}} >Your Events</Text>
-                <TouchableOpacity activeOpacity={0.5} >
-                <Image source={icons.filter}  />
-                </TouchableOpacity>
-            </View>
-        </View>
-        <NoEvent />
-    </View>
-  )
-}
+            <FilterBottomSheet isVisible={isModalVisible} onSwipeCancel={onClose}  onBackdropPress={onClose}  />
+        </>
+    );
+};
 
 export default Home
 
 const styles = StyleSheet.create({
-    searchInputHome:{
-        borderWidth:2,
-        borderColor:COLORS.tertiary,
-        flexDirection:"row",
-        alignItems:"center",
-        backgroundColor:COLORS.white,
-        paddingHorizontal:16, gap:10,
-        borderRadius:8
+    searchInputHome: {
+        borderWidth: 2,
+        borderColor: COLORS.tertiary,
+        flexDirection: "row",
+        alignItems: "center",
+        backgroundColor: COLORS.white,
+        paddingHorizontal: 16, gap: 10,
+        borderRadius: 8,
+        paddingVertical: 12
     },
-    InputText:{
-        color:COLORS.dark,
-        fontSize:SIZES.font,
-        width:"95%",
-        fontWeight:"400",
+    InputText: {
+        color: COLORS.dark,
+        fontSize: SIZES.font,
+        width: "95%",
+        fontWeight: "400",
     },
-    filterInner:{
-        flexDirection:"row",
-        alignItems:"center",
-        justifyContent:"space-between",
-        borderRadius:8
+    filterInner: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        borderRadius: 8
+    },
+    checkContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        paddingVertical: 10,
+        paddingHorizontal: 16,
+        backgroundColor: COLORS.secondary,
+        borderWidth: 1,
+        borderColor: COLORS.tertiary
+    },
+    titleText: {
+        color: COLORS.black,
+        fontSize: SIZES.font,
+        fontWeight: "600"
+    },
+    inputText: {
+        color: COLORS.gray,
+        fontSize: SIZES.font
     }
 })

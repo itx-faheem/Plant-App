@@ -180,7 +180,7 @@ const AddTaskFileAction = ({ navigation }) => {
                     snapPoints={snapPoints}
                     cancleBtn={onCloseFunction}
                     backdropComponent={() => <Pressable onPress={onCloseFunction} style={styles.PressableInner} />}
-                    save="Save"
+                    save="Save" cancelprops="Cancel"  titleProps="Assign to"
                 >
                     <AssignBottomComponent />
                 </AppBottomSheet>

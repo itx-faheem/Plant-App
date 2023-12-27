@@ -1,12 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
+import {  Text, View } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import NavigationPage from "./src/NavigationScreen/NavigationPage";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-
-
-
 
 
 const App = () => {
@@ -24,5 +21,3 @@ const App = () => {
 }
 
 export default App
-
-const styles = StyleSheet.create({})
