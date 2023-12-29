@@ -2,7 +2,6 @@ const COLORS = {
   primary: "#6941C6",
   secondary: "#F2F1F6",
   tertiary: "#E6E6E6",
-
   gray: "#7A828A",
   soft :"#9E77ED",
   white: "#FFF",
@@ -12,7 +11,12 @@ const COLORS = {
   lightGray :  "#344B67",
   orange : "#F6A531",
   green :"#168062",
-  blue : "#074DD9"
+  blue : "#074DD9",
+  grayDark:"#434554",
+  lightPurple:"#F0ECFA",
+  lightGreen:"#1580641A",
+  skin:"#DC282F1A",
+  lightSkin:"#EE71361A"
 };
 
 const WIDTH = {

@@ -1,7 +1,8 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View,Dimensions } from 'react-native'
 import React from 'react'
-import { COLORS, SIZES, images } from '../../../../../constants'
+import { COLORS, SIZES, images,  } from '../../../../../constants'
 
+const heightDimensions =  Dimensions.get("screen").height
 const NoEvent = () => {
     return (
         <View style={styles.container} >
@@ -21,7 +22,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        gap:24
+        gap:24,
+        minHeight:heightDimensions-heightDimensions/2.93
     },
     eventDescription:{
         color: COLORS.gray,

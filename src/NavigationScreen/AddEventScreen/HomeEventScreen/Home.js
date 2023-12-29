@@ -1,20 +1,20 @@
 import React, { useRef, useMemo, useState } from 'react';
-import { View, Text, Image, TouchableOpacity, Pressable, Dimensions, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Pressable, Dimensions, StyleSheet, ScrollView } from 'react-native';
 import AppIcon from 'react-native-vector-icons/AntDesign';
 import { COLORS, SIZES, icons } from '../../../../constants';
 import AppBottomSheet from '../../../../component/appcomponent/AppBottomSheet';
-import { FilterBottomSheet, HomeHeaderBar, NoEvent } from './HomeComponent';
+import { CreaatedEventDetail, FilterBottomSheet, HomeHeaderBar, NoEvent } from './HomeComponent';
 
 const heightDimensions = Dimensions.get('screen').height;
 
-const Home = ({ navigation,handlePress }) => {
+const Home = ({ navigation, handlePress }) => {
     const [isModalVisible, setModalVisible] = useState(false);
 
     const handlepress = () => {
         setModalVisible(true)
     }
 
-    const onClose = () =>{
+    const onClose = () => {
         setModalVisible(false)
     }
 
@@ -34,9 +34,12 @@ const Home = ({ navigation,handlePress }) => {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <NoEvent />
+                <ScrollView showsVerticalScrollIndicator={false} >
+                    {/* <NoEvent /> */}
+                    <CreaatedEventDetail onPress={()=>navigation.push("MainCreateComponent")} />
+                </ScrollView>
             </View>
-            <FilterBottomSheet isVisible={isModalVisible} onSwipeCancel={onClose}  onBackdropPress={onClose}  />
+            <FilterBottomSheet isVisible={isModalVisible} onSwipeCancel={onClose} onBackdropPress={onClose} />
         </>
     );
 };

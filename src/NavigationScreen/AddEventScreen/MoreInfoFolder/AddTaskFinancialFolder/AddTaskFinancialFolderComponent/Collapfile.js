@@ -23,7 +23,8 @@ const Collapfile = () => {
                 </View>
             </View>
             <Collapsible
-                collapsed={isCollapsed}>
+                collapsed={isCollapsed}
+                >
                 <CollapsibleComponent />
             </Collapsible>
         </View>

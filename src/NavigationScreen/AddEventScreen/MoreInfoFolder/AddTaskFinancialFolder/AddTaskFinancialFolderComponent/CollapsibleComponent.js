@@ -34,7 +34,7 @@ const CollapsibleComponent = () => {
             {data.map((item, index, id) => (
                 <View key={index} style={styles.itemContainer}>
                     <Radiobtn itemId={item.id} />
-                    <View style={{ width: "100%", gap: 3, paddingHorizontal:14}} >
+                    <View style={{ width: "100%", gap: 3, paddingHorizontal: 14 }} >
                         <Text style={styles.title}>{item.title}</Text>
                         <View style={styles.contentContainer}>
                             <View style={styles.containerInner}  >
@@ -81,7 +81,6 @@ const styles = StyleSheet.create({
     contentContainer: {
         justifyContent: "space-between",
         flexDirection: "row",
-        // paddingRight:5
     },
     imagesContainer: {
         flexDirection: "row",

@@ -31,6 +31,9 @@ import eventImg from "../assets/icons/eventImg.png";
 import addIcon from "../assets/icons/addIcon.png";
 import circularDollar from "../assets/icons/circularDollar.png";
 import addAssginIcon from "../assets/icons/addAssginIcon.png";
+import edit from "../assets/icons/edit.png";
+import personIcons from "../assets/icons/personIcons.png";
+import personBlack from "../assets/icons/personBlack.png";
 
 export default {
   compass,
@@ -64,5 +67,8 @@ export default {
   eventImg,
   addIcon,
   circularDollar,
-  addAssginIcon
+  addAssginIcon,
+  edit,
+  personIcons,
+  personBlack
 };

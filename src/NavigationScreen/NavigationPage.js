@@ -20,7 +20,6 @@ import Delegates from './AddEventScreen/AddDelegatesFolder/Delegates';
 import 'react-native-gesture-handler'
 import MoreInfo from './AddEventScreen/MoreInfoFolder/MoreInfo';
 import Invite from './AddEventScreen/InvitedFolder/Invite';
-import WorkScreen from "./WorkScreen";
 import InvitQRcode from './AddEventScreen/InvitedFolder/InvitedFolderComponent/InvitQRcode';
 import CreatedEvent from './AddEventScreen/LastEventCreated.js/CreatedEvent';
 import { QrCode } from './AddEventScreen/InvitedFolder/InvitedFolderComponent';
@@ -28,8 +27,7 @@ import DelegatesSupplies from './AddEventScreen/MoreInfoFolder/SuppliesFolder/De
 import AddTaskFileAction from './AddEventScreen/MoreInfoFolder/AddTaskFinancialFolder/AddTaskFileAction';
 import AppBottomSheet from '../../component/appcomponent/AppBottomSheet';
 import HomeSearchbar from './AddEventScreen/HomeEventScreen/HomeComponent/HomeSearchbar';
-import { FilterBottomSheet } from './AddEventScreen/HomeEventScreen/HomeComponent';
-
+import { MainCreateComponent } from './AddEventScreen/HomeEventScreen/HomeComponent/EventCreatedComponents';
 
 
 const HomeScreen = () => {
@@ -48,7 +46,7 @@ const HomeScreen = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}
     // initialRouteName="defaultScreen"
     >
-      {/* <Stack.Screen name='defaultScreen' component={FilterBottomSheet} /> */}
+      {/* <Stack.Screen name='defaultScreen' component={CreatedHome} /> */}
       {isSplashScreen ? (
         <Stack.Screen name="Splash" component={Splash} />
       ) : (
@@ -70,6 +68,7 @@ const HomeScreen = () => {
           <Stack.Screen name='DelegatesSupplies' component={DelegatesSupplies} />
           <Stack.Screen name='AddTaskFileAction' component={AddTaskFileAction} />
           <Stack.Screen name='HomeSearchbar' component={HomeSearchbar} />
+          <Stack.Screen name='MainCreateComponent' component={MainCreateComponent} />
         </>
       )}
     </Stack.Navigator>

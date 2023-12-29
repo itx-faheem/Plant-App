@@ -13,6 +13,7 @@ import Wade from "../assets/images/Wade.png";
 import Hawkins from "../assets/images/Hawkins.png";
 import Sean from "../assets/images/Sean.png";
 import Gabe from "../assets/images/Gabe.png";
+import invitepicture from "../assets/images/invitepicture.png";
 
 export default {
   profile,cloudBgc,Background,Adam,Artwork,
@@ -25,5 +26,6 @@ export default {
   Kathryn,
   Wade,
   Sean,
-  Gabe
+  Gabe,
+  invitepicture
 };

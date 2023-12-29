@@ -3,31 +3,40 @@ import React from 'react'
 import { COLORS, icons } from '../../../../../../constants'
 import AppIcon from "react-native-vector-icons/AntDesign";
 
-const Tasksfile = () => {
+const Tasksfile = ({ plusePress,backgroundColor, tintColor, style }) => {
     return (
         <View style={{
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-between",
-            paddingHorizontal:16,
-            paddingVertical:10
+            paddingHorizontal: 16,
+            paddingVertical: 10,
+            ...backgroundColor
+
         }} >
             <View
                 style={{
                     flexDirection: "row",
                     alignItems: "center",
-                    gap:15
+                    gap: 15
                 }}
             >
-                <Image 
-                style={styles.taskImg}
-                 source={icons.Tasks} />
+                <Image
+                    style={{
+                        width: 18,
+                        height: 18,
+                        resizeMode: "contain",
+                        ...tintColor
+                    }}
+                    source={icons.Tasks} />
                 <Text
-                style={{color:COLORS.gray}}
+                    style={{ color: COLORS.gray, ...style}}
                 >Tasks</Text>
             </View>
-            <TouchableOpacity activeOpacity={0.5} >
-            <AppIcon name='plus' color={COLORS.primary} size={20} />
+            <TouchableOpacity
+                onPress={plusePress}
+                activeOpacity={0.5} >
+                <AppIcon name='plus' color={COLORS.primary} size={20} />
             </TouchableOpacity>
         </View>
     )
@@ -36,9 +45,7 @@ const Tasksfile = () => {
 export default Tasksfile
 
 const styles = StyleSheet.create({
-    taskImg:{
-        width:18,
-        height:18,
-        resizeMode:"contain"
+    taskImg: {
+      
     }
 })
