@@ -7,6 +7,8 @@ import CreatedEventCollapsible from './CreatedEventCollapsible';
 import CreatedDelegatesFile from './CreatedDelegatesFile';
 import {Tasksfile} from '../../../MoreInfoFolder/AddTaskFinancialFolder/AddTaskFinancialFolderComponent';
 import TaskCollapsibleCreated from './TaskCollapsibleCreated';
+import FinancialPlus from '../../../MoreInfoFolder/AddTaskFinancialFolder/AddTaskFinancialFolderComponent/InputFinancialOverView/FinancialPlus';
+import FinancialPlusCollapsible from './FinancialPlusCollapsible';
 
 const heightDimensions = Dimensions.get('screen').height;
 const MainCreateComponent = ({navigation, delegatesPress}) => {
@@ -34,6 +36,8 @@ const MainCreateComponent = ({navigation, delegatesPress}) => {
         backgroundColor={{backgroundColor: COLORS.secondary}}
       />
       <TaskCollapsibleCreated />
+      <FinancialPlus />
+      <FinancialPlusCollapsible />
     </ScrollView>
   );
 };

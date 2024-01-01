@@ -6,6 +6,7 @@ import CreatedEventCollapsible from './CreatedEventCollapsible';
 import CreatedDelegatesFile from './CreatedDelegatesFile';
 import TaskCollapsibleCreated from './TaskCollapsibleCreated';
 import TaskCollapsibleMapData from './TaskCollapsibleMapData';
+import FinancialPlusCollapsible from './FinancialPlusCollapsible';
 export {
   CreateEventHeaderimg,
   MainCreateComponent,
@@ -15,4 +16,5 @@ export {
   CreatedDelegatesFile,
   TaskCollapsibleCreated,
   TaskCollapsibleMapData,
+  FinancialPlusCollapsible,
 };

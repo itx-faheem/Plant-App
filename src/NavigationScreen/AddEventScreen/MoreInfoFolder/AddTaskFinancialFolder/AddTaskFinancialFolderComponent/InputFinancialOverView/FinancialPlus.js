@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         paddingHorizontal: 16,
         paddingVertical: 12,
-        width: "100%"
+        width: "100%",
+        backgroundColor:COLORS.secondary
     },
     innerContainer: {
         flexDirection: "row",

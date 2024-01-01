@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
   imgStyle: {
     width: 40,
     height: 40,
-    resizeMode: 'contain',
     borderRadius: 20,
+    resizeMode: 'contain',
     zIndex: 1,
     borderWidth:1,
     borderColor:COLORS.tertiary
