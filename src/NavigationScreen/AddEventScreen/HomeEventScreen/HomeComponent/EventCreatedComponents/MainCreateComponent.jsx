@@ -24,11 +24,11 @@ const MainCreateComponent = ({navigation, delegatesPress}) => {
       </View>
       <CreateEventText />
       <CreatedEventCollapsible
-        delegatesPresAction={() => navigation.push('DelegatesSupplies')}
-        addTaskOnPress={() => navigation.push('AddTaskFileAction')}
+        delegatesPresAction={() => navigation.navigate('DelegatesSupplies')}
+        addTaskOnPress={() => navigation.navigate('AddTaskFileAction')}
       />
       <CreatedDelegatesFile
-        delegatesPress={() => navigation.push('DelegatesSupplies')}
+        delegatesPress={() => navigation.navigate('DelegatesSupplies')}
       />
       <Tasksfile
         tintColor={{tintColor: COLORS.gray}}
@@ -37,6 +37,7 @@ const MainCreateComponent = ({navigation, delegatesPress}) => {
       />
       <TaskCollapsibleCreated />
       <FinancialPlus />
+
       <FinancialPlusCollapsible />
     </ScrollView>
   );

@@ -21,7 +21,7 @@ const Invite = ({ navigation }) => {
       <InputandBtn title="Send Invites" />
       <ListInvite />
       <QrCode
-       onPress={() => navigation.push("CreatedEvent")}
+       onPress={() => navigation.navigate("CreatedEvent")}
         />
         
     </ScrollView>

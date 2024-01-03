@@ -16,9 +16,9 @@ const MoreInfo = ({ navigation,  }) => {
       <StepHeader style={{ backgroundColor: COLORS.secondary }} />
       <AddBudgetEvent />
       <Action
-      addtaskaction={()=>navigation.push("AddTaskFileAction")}
-        onPress={() => navigation.push("Invite")}
-        AddSuppliesPress={()=>navigation.push("DelegatesSupplies")}
+      addtaskaction={()=>navigation.navigate("AddTaskFileAction")}
+        onPress={() => navigation.navigate("Invite")}
+        AddSuppliesPress={()=>navigation.navigate("DelegatesSupplies")}
       />
     </ScrollView>
   )

@@ -21,9 +21,9 @@ const Home = ({ navigation, handlePress }) => {
     return (
         <>
             <View style={{ flex: 1, zIndex: 0 }}>
-                <HomeHeaderBar onPress={() => navigation.push('CreateEvent')} />
+                <HomeHeaderBar onPress={() => navigation.navigate('CreateEvent')} />
                 <View style={{ paddingVertical: 16, paddingHorizontal: 16, gap: 12, borderWidth: 1, borderColor: COLORS.tertiary }}>
-                    <Pressable onPress={() => navigation.push('HomeSearchbar')} style={styles.searchInputHome}>
+                    <Pressable onPress={() => navigation.navigate('HomeSearchbar')} style={styles.searchInputHome}>
                         <AppIcon name="search1" color={COLORS.gray} size={18} />
                         <Text style={styles.inputText}>Search</Text>
                     </Pressable>
@@ -35,8 +35,7 @@ const Home = ({ navigation, handlePress }) => {
                     </View>
                 </View>
                 <ScrollView showsVerticalScrollIndicator={false} >
-                    {/* <NoEvent /> */}
-                    <CreaatedEventDetail onPress={()=>navigation.push("MainCreateComponent")} />
+                    <CreaatedEventDetail onPress={() => navigation.navigate("MainCreateComponent")} />
                 </ScrollView>
             </View>
             <FilterBottomSheet isVisible={isModalVisible} onSwipeCancel={onClose} onBackdropPress={onClose} />

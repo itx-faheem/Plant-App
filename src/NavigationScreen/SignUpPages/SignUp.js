@@ -54,7 +54,7 @@ const SignUp = ({ navigation }) => {
                     />
                     <View style={styles.contentContainer}>
                         <LogoSection />
-                        <SignUpForm  onPress={()=>navigation.push("OtpCode")}  />
+                        <SignUpForm  onPress={()=>navigation.navigate("OtpCode")}  />
                     </View>
                 </ScrollView>
             </BackgroundImageWrapper>

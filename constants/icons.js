@@ -34,7 +34,11 @@ import addAssginIcon from "../assets/icons/addAssginIcon.png";
 import edit from "../assets/icons/edit.png";
 import personIcons from "../assets/icons/personIcons.png";
 import personBlack from "../assets/icons/personBlack.png";
-
+import bell from "../assets/icons/bell.png";
+import magic from "../assets/icons/magic.png";
+import fqa from "../assets/icons/fqa.png";
+import userBlack from "../assets/icons/userBlack.png";
+import BlackLock from "../assets/icons/BlackLock.png";
 export default {
   compass,
   date,
@@ -70,5 +74,10 @@ export default {
   addAssginIcon,
   edit,
   personIcons,
-  personBlack
+  personBlack,
+  bell,
+  magic,
+  fqa,
+  userBlack,
+  BlackLock
 };

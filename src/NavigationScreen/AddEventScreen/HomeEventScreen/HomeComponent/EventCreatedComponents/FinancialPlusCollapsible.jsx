@@ -27,13 +27,13 @@ const FinancialPlusCollapsible = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {height: !isCollapsed &&  heightDimensions / 2.50,}]}>
       <View style={styles.FinancialWrapper}>
         <Text style={styles.FinancialText}>Financial Overview</Text>
         <View style={styles.iconVIew}>
           <TouchableOpacity activeOpacity={0.5} onPress={handlePress}>
             <AppIcon
-              name={isCollapsed ? 'up' : 'down'}
+              name={isCollapsed ? 'down' : 'up'}
               size={20}
               color={COLORS.black}
             />
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: COLORS.secondary,
-    height: heightDimensions / 2.50,
+    // height:
   },
   iconVIew: {
     flexDirection: 'row',

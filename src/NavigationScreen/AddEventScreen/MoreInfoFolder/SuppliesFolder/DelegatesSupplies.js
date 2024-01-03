@@ -5,12 +5,12 @@ import { AppHeader } from '../../../../../component/appcomponent'
 import { COLORS } from '../../../../../constants'
 import DelegatesSuppliesList from './DelegatesSuppliesList'
 
-const DelegatesSupplies = ( {navigation} ) => {
+const DelegatesSupplies = ({ navigation }) => {
     return (
         <>
             <ScrollView showsVerticalScrollIndicator={false} >
                 <AppHeader
-                onPress={()=>navigation.goBack()}
+                    onPress={() => navigation.goBack()}
                     color={COLORS.black}
                     backgroundColor={{ backgroundColor: COLORS.secondary }}
                     title="Delegates" />

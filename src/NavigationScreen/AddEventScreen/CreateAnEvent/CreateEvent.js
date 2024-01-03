@@ -34,7 +34,7 @@ const CreateEvent = ({ navigation }) => {
                 <StepHeader />
                 <UploadFlay />
                 <CreateInput 
-                onPress={()=>navigation.push("Delegates")}
+                onPress={()=>navigation.navigate("Delegates")}
                 />
 
             </>

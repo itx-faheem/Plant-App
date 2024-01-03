@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 16,
     gap: 16,
-    backgroundColor:COLORS.white
+    backgroundColor: COLORS.white,
   },
   title: {
     fontSize: SIZES.xLarge,

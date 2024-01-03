@@ -72,12 +72,12 @@ const Login = ({ navigation }) => {
                             <InputField icon={icons.emaiIcon} placeholder='Email Address' />
                             <InputField icon={icons.lock} placeholder='Password' />
                             <TouchableOpacity
-                                onPress={() => navigation.push("ForgotPass")}
+                                onPress={() => navigation.navigate("ForgotPass")}
                                 activeOpacity={0.5}>
                                 <Text style={{ ...commonTextStyles, color: COLORS.primary, fontWeight: '600' }}>Forgot Password</Text>
                             </TouchableOpacity>
                             <View style={{ justifyContent: 'center', alignItems: 'center', }}>
-                                <AppButton title="Sign In" style={{ width: '100%' }} onPress={()=>navigation.push("Home")}  />
+                                <AppButton title="Sign In" style={{ width: '100%' }} onPress={()=>navigation.navigate("Home")}  />
                             </View>
                         </View>
                     </View>

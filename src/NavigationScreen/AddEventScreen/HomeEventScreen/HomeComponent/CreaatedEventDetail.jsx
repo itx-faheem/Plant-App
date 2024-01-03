@@ -6,40 +6,47 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import React from 'react';
+import React, {children, useState} from 'react';
 import {COLORS, SIZES, icons} from '../../../../../constants';
-const CreaatedEventDetail = ({onPress}) => {
+import AppIcon from 'react-native-vector-icons/AntDesign';
+const CreaatedEventDetail = ({onPress, children, style}) => {
+  const [vasiableDownIcon, setvasiableDownIcon] = useState(false);
   return (
     <>
-    <TouchableOpacity
-      activeOpacity={0.5}
-      onPress={onPress}
-      style={{
-        backgroundColor: COLORS.white,
-        paddingVertical: 16,
-        paddingHorizontal: 14,
-      }}>
-      <View
+      <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={onPress}
         style={{
+          backgroundColor: COLORS.white,
+          paddingVertical: 16,
+          paddingHorizontal: 14,
           flexDirection: 'row',
-          gap: 15,
           alignItems: 'center',
+          justifyContent: 'space-between',
+          ...style,
         }}>
-        <Image
+        <View
           style={{
-            width: 48,
-            height: 48,
-            resizeMode: 'contain',
-            borderRadius: 5,
-          }}
-          source={icons.eventImg}
-        />
-        <View>
-          <Text style={styles.eventName}>O-week BBQ rager</Text>
-          <Text style={styles.eventDate}>19 Aug 2023</Text>
+            flexDirection: 'row',
+            gap: 15,
+            alignItems: 'center',
+          }}>
+          <Image
+            style={{
+              width: 48,
+              height: 48,
+              resizeMode: 'contain',
+              borderRadius: 5,
+            }}
+            source={icons.eventImg}
+          />
+          <View>
+            <Text style={styles.eventName}>O-week BBQ rager</Text>
+            <Text style={styles.eventDate}>19 Aug 2023</Text>
+          </View>
         </View>
-      </View>
-    </TouchableOpacity>
+        {children}
+      </TouchableOpacity>
     </>
   );
 };

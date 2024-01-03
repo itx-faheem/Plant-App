@@ -28,6 +28,12 @@ import AddTaskFileAction from './AddEventScreen/MoreInfoFolder/AddTaskFinancialF
 import AppBottomSheet from '../../component/appcomponent/AppBottomSheet';
 import HomeSearchbar from './AddEventScreen/HomeEventScreen/HomeComponent/HomeSearchbar';
 import { MainCreateComponent } from './AddEventScreen/HomeEventScreen/HomeComponent/EventCreatedComponents';
+import { ChangePassword } from './AddEventScreen/ProFileScreen/ChangePasswordFolder';
+import { Notifications } from './AddEventScreen/ProFileScreen/NotificationsFolder';
+import { FAQFile } from './AddEventScreen/ProFileScreen/FAQFolder';
+import { Logout } from './AddEventScreen/ProFileScreen/LogoutFolder';
+import { Mysubscription } from './AddEventScreen/ProFileScreen/MysubscriptionFolder';
+import { Personalinformation } from "./AddEventScreen/ProFileScreen/PersonalinformationFolder";
 
 
 const HomeScreen = () => {
@@ -46,7 +52,7 @@ const HomeScreen = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}
     // initialRouteName="defaultScreen"
     >
-      {/* <Stack.Screen name='defaultScreen' component={CreatedHome} /> */}
+      {/* <Stack.Screen name='defaultScreen' component={AppBottomSheet} /> */}
       {isSplashScreen ? (
         <Stack.Screen name="Splash" component={Splash} />
       ) : (
@@ -69,6 +75,12 @@ const HomeScreen = () => {
           <Stack.Screen name='AddTaskFileAction' component={AddTaskFileAction} />
           <Stack.Screen name='HomeSearchbar' component={HomeSearchbar} />
           <Stack.Screen name='MainCreateComponent' component={MainCreateComponent} />
+          <Stack.Screen name='Personalinformation' component={Personalinformation} />
+          <Stack.Screen name='ChangePassword' component={ChangePassword} />
+          <Stack.Screen name='Notifications' component={Notifications} />
+          <Stack.Screen name='FAQFile' component={FAQFile} />
+          <Stack.Screen name='Logout' component={Logout} />
+          <Stack.Screen name='Mysubscription' component={Mysubscription} />
         </>
       )}
     </Stack.Navigator>

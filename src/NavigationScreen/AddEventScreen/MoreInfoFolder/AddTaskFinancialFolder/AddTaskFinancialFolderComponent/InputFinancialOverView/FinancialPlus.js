@@ -7,10 +7,11 @@ const FinancialPlus = () => {
         <View style={styles.container} >
             <View style={styles.innerContainer} >
                 <Image style={styles.iconStyle} source={icons.circularDollar} />
-                <TextInput style={styles.titltext}
+                <Text style={styles.titltext} >Financial Overview</Text>
+                {/* <TextInput style={styles.titltext}
                     placeholderTextColor={COLORS.gray}
                     placeholder='Financial Overview'
-                />
+                /> */}
             </View>
             <TouchableOpacity activeOpacity={0.5} >
                 <AppIcon color={COLORS.primary} name='plus' size={20} />

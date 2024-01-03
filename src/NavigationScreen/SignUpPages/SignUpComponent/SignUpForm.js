@@ -4,7 +4,7 @@ import InputField  from "./InputField";
 import { AppButton } from '../../../../component/appcomponent';
 import { COLORS, SIZES, icons,} from '../../../../constants';
 
-// const handlePress = () => navigation.push("OtpCode"); 
+// const handlePress = () => navigation.navigate("OtpCode"); 
 const SignUpForm = ({ viewRef, viewRef1, viewRef2, navigation, onPress }) => {
     return(
         <View style={styles.formContainer}>

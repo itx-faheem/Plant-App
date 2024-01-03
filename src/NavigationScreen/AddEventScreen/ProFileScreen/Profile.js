@@ -1,10 +1,16 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { HeaderProfile } from './ProFileHeader'
+import { AccountInfoMainFile } from './AccountInfo'
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
+  const handlePress = (component) => {
+    navigation.navigate(component);
+  };
   return (
-    <View>
-      <Text>Profile</Text>
+    <View style={{ flex: 1 }} >
+      <HeaderProfile />
+      <AccountInfoMainFile handlePress={handlePress} />
     </View>
   )
 }

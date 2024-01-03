@@ -23,7 +23,7 @@ const ForgotStepto = ({navigation}) => {
             <View style={{justifyContent:"center",flexDirection:"row",gap:4}} >
                 <Text  style={styles.receiveText}  >Don’t receive the email?</Text>
                 <TouchableOpacity activeOpacity={0.5} 
-                // onPress={navigation.push("SetPassword")}
+                // onPress={navigation.navigate("SetPassword")}
                 onPress={()=>navigation.replace("SetPassword")}
                   >
                     <Text style={styles.resendBtn} >Click to resend</Text>

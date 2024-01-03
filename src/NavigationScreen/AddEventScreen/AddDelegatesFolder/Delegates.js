@@ -23,7 +23,7 @@ const Delegates = ({ navigation }) => {
                 <StepHeader style={{ backgroundColor: COLORS.secondary }} />
                 <InputandBtn  title="Add event delegates" />
                 <ListItems
-                 onPress={()=>navigation.push("MoreInfo")}
+                 onPress={()=>navigation.navigate("MoreInfo")}
                    />
             </ScrollView>
         </>

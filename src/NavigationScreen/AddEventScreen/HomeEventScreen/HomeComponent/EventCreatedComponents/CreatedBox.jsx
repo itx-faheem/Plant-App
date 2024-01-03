@@ -11,13 +11,13 @@ const CreatedBox = () => {
           <Text style={styles.titleText}>Guests invited</Text>
           <Text style={styles.number}>10</Text>
         </View>
-        <View style={[styles.boxInnerContainer, styles.boxthree]} >
+        <View style={[styles.boxInnerContainer, styles.boxthree]}>
           <Text style={styles.titleText}>Going</Text>
           <Text style={styles.number}>5</Text>
         </View>
       </View>
       <View style={{gap: 12}}>
-        <View style={[styles.boxInnerContainer, styles.boxtwo]} >
+        <View style={[styles.boxInnerContainer, styles.boxtwo]}>
           <Text style={styles.titleText}>Not going</Text>
           <Text style={styles.number}>2</Text>
         </View>
@@ -35,19 +35,21 @@ export default CreatedBox;
 const styles = StyleSheet.create({
   boxContainer: {
     flexDirection: 'row',
+    gap: 10,
+    width: widthDimensions,
     alignItems: 'center',
     alignSelf: 'center',
-    gap: 12,
+    justifyContent: 'center',
   },
   boxInnerContainer: {
     paddingHorizontal: 12,
     paddingVertical: 8,
     gap: 4,
     backgroundColor: COLORS.orange,
-    width: widthDimensions / 2.2,
     borderRadius: 4,
     height: 66,
     alignItems: 'flex-start',
+    width: widthDimensions / 2.2,
   },
   number: {
     fontSize: SIZES.xLarge,
@@ -59,16 +61,16 @@ const styles = StyleSheet.create({
     fontSize: SIZES.medium,
     textAlign: 'left',
   },
-  boxone:{
-    backgroundColor:COLORS.lightPurple
+  boxone: {
+    backgroundColor: COLORS.lightPurple,
   },
-  boxtwo:{
-    backgroundColor:COLORS.lightGreen
+  boxtwo: {
+    backgroundColor: COLORS.lightGreen,
   },
-  boxthree:{
-    backgroundColor:COLORS.skin
+  boxthree: {
+    backgroundColor: COLORS.skin,
   },
-  boxFour:{
-    backgroundColor:COLORS.lightSkin
-  }
+  boxFour: {
+    backgroundColor: COLORS.lightSkin,
+  },
 });
