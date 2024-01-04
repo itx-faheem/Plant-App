@@ -14,6 +14,7 @@ import Hawkins from "../assets/images/Hawkins.png";
 import Sean from "../assets/images/Sean.png";
 import Gabe from "../assets/images/Gabe.png";
 import invitepicture from "../assets/images/invitepicture.png";
+import Circle from "../assets/images/Circle.png";
 
 export default {
   profile,cloudBgc,Background,Adam,Artwork,
@@ -27,5 +28,6 @@ export default {
   Wade,
   Sean,
   Gabe,
-  invitepicture
+  invitepicture,
+  Circle
 };

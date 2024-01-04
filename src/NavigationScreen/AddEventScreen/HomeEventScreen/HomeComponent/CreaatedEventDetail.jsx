@@ -10,7 +10,6 @@ import React, {children, useState} from 'react';
 import {COLORS, SIZES, icons} from '../../../../../constants';
 import AppIcon from 'react-native-vector-icons/AntDesign';
 const CreaatedEventDetail = ({onPress, children, style}) => {
-  const [vasiableDownIcon, setvasiableDownIcon] = useState(false);
   return (
     <>
       <TouchableOpacity

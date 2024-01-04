@@ -1,7 +1,7 @@
 import {
     StyleSheet, Text,
-    View,ImageBackground,
-    Image,TouchableOpacity,
+    View, ImageBackground,
+    Image, TouchableOpacity,
     TextInput, ScrollView,
     KeyboardAvoidingView,
     Platform, Keyboard,
@@ -43,10 +43,10 @@ const SignUp = ({ navigation }) => {
             onPress={handleDismissKeyboard}>
             <BackgroundImageWrapper>
                 <ScrollView
-                showsVerticalScrollIndicator={false}
-                 contentContainerStyle={{ minHeight: windowHeight - windowHeight / 3.2 }} >
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={{ minHeight: windowHeight - windowHeight / 3.2 }} >
                     <AppHeader
-                        onPress={()=>navigation.goBack()}
+                        onPress={() => navigation.goBack()}
                         title="Sign Up"
                         color={COLORS.white}
                         style={{ color: COLORS.white }}
@@ -54,7 +54,7 @@ const SignUp = ({ navigation }) => {
                     />
                     <View style={styles.contentContainer}>
                         <LogoSection />
-                        <SignUpForm  onPress={()=>navigation.navigate("OtpCode")}  />
+                        <SignUpForm onPress={() => navigation.navigate("OtpCode")} />
                     </View>
                 </ScrollView>
             </BackgroundImageWrapper>

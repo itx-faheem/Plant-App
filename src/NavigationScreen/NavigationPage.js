@@ -31,9 +31,10 @@ import { MainCreateComponent } from './AddEventScreen/HomeEventScreen/HomeCompon
 import { ChangePassword } from './AddEventScreen/ProFileScreen/ChangePasswordFolder';
 import { Notifications } from './AddEventScreen/ProFileScreen/NotificationsFolder';
 import { FAQFile } from './AddEventScreen/ProFileScreen/FAQFolder';
-import { Logout } from './AddEventScreen/ProFileScreen/LogoutFolder';
 import { Mysubscription } from './AddEventScreen/ProFileScreen/MysubscriptionFolder';
 import { Personalinformation } from "./AddEventScreen/ProFileScreen/PersonalinformationFolder";
+import { CreatedBottomSheetandInputheader } from './AddEventScreen/TaksScreen/SeacondHeader';
+import SubscriptionDetail from './AddEventScreen/ProFileScreen/MysubscriptionFolder/PremiumFile/SubscriptionDetail';
 
 
 const HomeScreen = () => {
@@ -52,7 +53,7 @@ const HomeScreen = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}
     // initialRouteName="defaultScreen"
     >
-      {/* <Stack.Screen name='defaultScreen' component={AppBottomSheet} /> */}
+      {/* <Stack.Screen name='defaultScreen' component={CreatedBottomSheetandInputheader} /> */}
       {isSplashScreen ? (
         <Stack.Screen name="Splash" component={Splash} />
       ) : (
@@ -79,8 +80,8 @@ const HomeScreen = () => {
           <Stack.Screen name='ChangePassword' component={ChangePassword} />
           <Stack.Screen name='Notifications' component={Notifications} />
           <Stack.Screen name='FAQFile' component={FAQFile} />
-          <Stack.Screen name='Logout' component={Logout} />
           <Stack.Screen name='Mysubscription' component={Mysubscription} />
+          <Stack.Screen name='SubscriptionDetail' component={SubscriptionDetail} />
         </>
       )}
     </Stack.Navigator>

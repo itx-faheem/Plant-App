@@ -10,6 +10,7 @@ const TaskCollasipbleArrowHeader = ({
   sethandleCollapsibleBuy,
   handleupdown,
   name,
+  threeDotsPress
 }) => {
   return (
     <View
@@ -37,7 +38,9 @@ const TaskCollasipbleArrowHeader = ({
         <TouchableOpacity onPress={handleupdown} activeOpacity={0.5}>
           <AppIcon name={name} size={18} color={COLORS.black} />
         </TouchableOpacity>
+        <TouchableOpacity  activeOpacity={0.5}  onPress={threeDotsPress} >
         <Entypo name="dots-three-horizontal" size={18} color={COLORS.black} />
+        </TouchableOpacity>
       </View>
     </View>
   );

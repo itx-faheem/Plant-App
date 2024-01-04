@@ -39,6 +39,7 @@ import magic from "../assets/icons/magic.png";
 import fqa from "../assets/icons/fqa.png";
 import userBlack from "../assets/icons/userBlack.png";
 import BlackLock from "../assets/icons/BlackLock.png";
+import Banner from "../assets/icons/Banner.png";
 export default {
   compass,
   date,
@@ -79,5 +80,6 @@ export default {
   magic,
   fqa,
   userBlack,
-  BlackLock
+  BlackLock,
+  Banner
 };

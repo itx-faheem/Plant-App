@@ -1,28 +1,32 @@
 import {StyleSheet, Text, TextInput, View} from 'react-native';
-import React from 'react';
+import React, {useMemo, useRef, useState} from 'react';
 import AppIcon from 'react-native-vector-icons/AntDesign';
-
 import {
   CreaatedEventDetail,
   HomeHeaderBar,
 } from '../../HomeEventScreen/HomeComponent';
 import {COLORS, SIZES} from '../../../../../constants';
+import AppBottomSheet from '../../../../../component/appcomponent/AppBottomSheet';
 
-const CreatedBottomSheetandInputheader = () => {
+const CreatedBottomSheetandInputheader = ( {handlePress} ) => {
   return (
-    <View style={styles.container}>
-      <CreaatedEventDetail style={styles.createdEventbgc}>
-        <AppIcon name="down" size={15} />
-      </CreaatedEventDetail>
-      <View style={styles.inputWrapper}>
-        <AppIcon name="search1" size={18} color={COLORS.gray} />
-        <TextInput
-          placeholder="Search"
-          placeholderTextColor={COLORS.gray}
-          style={styles.inputStyle}
-        />
+    <>
+      <View style={styles.container}>
+        <CreaatedEventDetail
+          onPress={(handlePress)}
+          style={styles.createdEventbgc}>
+          <AppIcon name="down" size={15} />
+        </CreaatedEventDetail>
+        <View style={styles.inputWrapper}>
+          <AppIcon name="search1" size={18} color={COLORS.gray} />
+          <TextInput
+            placeholder="Search"
+            placeholderTextColor={COLORS.gray}
+            style={styles.inputStyle}
+          />
+        </View>
       </View>
-    </View>
+    </>
   );
 };
 
@@ -61,6 +65,5 @@ const styles = StyleSheet.create({
     width: '100%',
     borderRadius: 8,
     paddingHorizontal: 14,
-
   },
 });

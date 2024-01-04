@@ -16,7 +16,8 @@ const COLORS = {
   lightPurple:"#F0ECFA",
   lightGreen:"#1580641A",
   skin:"#DC282F1A",
-  lightSkin:"#EE71361A"
+  lightSkin:"#EE71361A",
+  red:"red"
 };
 
 const WIDTH = {

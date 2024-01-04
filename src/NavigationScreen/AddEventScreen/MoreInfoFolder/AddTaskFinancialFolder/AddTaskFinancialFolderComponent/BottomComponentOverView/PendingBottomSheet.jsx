@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     gap: 6,
     borderRadius: 100,
+    backgroundColor:COLORS.white
   },
   pendingText: {
     color: COLORS.orange,

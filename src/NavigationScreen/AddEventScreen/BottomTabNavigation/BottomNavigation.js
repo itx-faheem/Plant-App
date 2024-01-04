@@ -19,7 +19,7 @@ const BottomNavigation = () => {
     };
 
     const createTabOptions = (icon, lablel, colorIcon,) => ({ focused }) => (
-        <View style={{ alignItems: "center", gap: 3, justifyContent: "space-between" }} >
+        <View style={{ alignItems: "center", gap: 3, justifyContent: "space-between", }} >
             <Image style={{ width: 21, height: 21, resizeMode: "contain" }} source={focused ? colorIcon : icon} />
             <Text style={{ color: focused ? COLORS.primary : COLORS.gray, fontSize: 11 }} >{lablel}</Text>
             {lablel === "Messages" ?
@@ -56,7 +56,8 @@ export default BottomNavigation;
 const styles = StyleSheet.create({
     tabsBottomContainer: {
         height: '6.6%',
-        paddingVertical: 5
+        paddingVertical: 5,
+        zIndex:1
     },
     tabBarMess: {
         position: "absolute",

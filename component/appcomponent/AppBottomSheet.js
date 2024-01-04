@@ -1,8 +1,7 @@
 import { View, Dimensions, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import BottomSheetModal from '@gorhom/bottom-sheet';
+import BottomSheetModal, { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 import { COLORS, SIZES } from '../../constants';
-import React, { useMemo, useRef } from "react";
-import { BottomSheetBackdropProps } from "@gorhom/bottom-sheet";
+import React, { useMemo } from "react";
 import Animated, {
   Extrapolate,
   Extrapolation,
@@ -11,7 +10,7 @@ import Animated, {
 } from "react-native-reanimated";
 const heightDimensions = Dimensions.get("screen").height;
 
-const AppBottomSheet = ({ children, snapPoints, bref, onTouchStart, cancelprops, titleProps, save, cancleBtn, }) => {
+const AppBottomSheet = ({ children, snapPoints, bref, saveBtn, onTouchStart, cancelprops, titleProps, save, cancleBtn, cancelColor, saveColor, }) => {
   return (
     <>
       <BottomSheetModal
@@ -21,14 +20,16 @@ const AppBottomSheet = ({ children, snapPoints, bref, onTouchStart, cancelprops,
         animateOnMount={true}
         backdropComponent={(props) => <CustomBackdrop {...props} onTouchStart={onTouchStart} />}
         handleIndicatorStyle={styles.indicatorStyle}
+        style={styles.styleBottomSheet}
+
       >
         <View style={styles.headerBottomSheet}>
           <TouchableOpacity onPress={cancleBtn}>
-            <Text style={styles.cancelBtn}>{cancelprops}</Text>
+            <Text style={[styles.cancelBtn, cancelColor]}>{cancelprops}</Text>
           </TouchableOpacity>
           <Text style={styles.assText}>{titleProps}</Text>
-          <TouchableOpacity>
-            <Text style={styles.saveText}>{save}</Text>
+          <TouchableOpacity onPress={saveBtn}  >
+            <Text style={[styles.saveText, saveColor]}>{save}</Text>
           </TouchableOpacity>
         </View>
         {children}
@@ -37,7 +38,7 @@ const AppBottomSheet = ({ children, snapPoints, bref, onTouchStart, cancelprops,
   );
 };
 
-const CustomBackdrop = ({ animatedIndex, style,onTouchStart }) => {
+const CustomBackdrop = ({ animatedIndex, style, onTouchStart }) => {
   const containerAnimatedStyle = useAnimatedStyle(() => ({
     opacity: interpolate(
       animatedIndex.value,
@@ -52,13 +53,14 @@ const CustomBackdrop = ({ animatedIndex, style,onTouchStart }) => {
       style,
       {
         backgroundColor: "rgba(0,0,0,0.7)",
+        height: "100%"
       },
       containerAnimatedStyle,
     ],
     [style, containerAnimatedStyle]
   );
 
-  return <Animated.View onTouchStart={onTouchStart}  style={containerStyle} />;
+  return <Animated.View onTouchStart={onTouchStart} style={containerStyle} />;
 };
 
 
@@ -90,6 +92,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 10,
   },
+  styleBottomSheet: {
+    zIndex: 10,
+    position: "absolute"
+  }
 });
 
 export default AppBottomSheet;

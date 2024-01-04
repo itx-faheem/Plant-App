@@ -5,10 +5,10 @@ import PendingBottomSheet from './PendingBottomSheet'
 import DueBottomSheet from './DueBottomSheet'
 import { COLORS } from '../../../../../../../constants'
 const heightDimensions = Dimensions.get('screen').height;
-const MainBottomOverView = ({ handlePress, bref, snapPoints }) => {
+const MainBottomOverView = ({ handlePress, bref, snapPoints,backgroundColor }) => {
 
     return (
-        <View style={styles.container}>
+        <View style={{...styles.container,  ...backgroundColor}}>
             <AssignBottomSheetFile handlePress={handlePress} bref={bref} snapPoints={snapPoints} />
             <PendingBottomSheet />
             <DueBottomSheet />
@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.white,
         paddingHorizontal: 16,
         paddingVertical: 10,
-        gap: 7
+        gap: 7,
+        justifyContent:"flex-start"
     }
 })
