@@ -13,7 +13,7 @@ const CreaatedEventDetail = ({onPress, children, style}) => {
   return (
     <>
       <TouchableOpacity
-        activeOpacity={0.5}
+        activeOpacity={0.8}
         onPress={onPress}
         style={{
           backgroundColor: COLORS.white,

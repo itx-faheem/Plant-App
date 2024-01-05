@@ -2,17 +2,13 @@ import {Image, StyleSheet, Text, TextInput, View} from 'react-native';
 import React from 'react';
 import {COLORS, SIZES, icons} from '../../../../../constants';
 import MainBottomOverView from '../../MoreInfoFolder/AddTaskFinancialFolder/AddTaskFinancialFolderComponent/BottomComponentOverView/MainBottomOverView';
+import TaskBottomSheetInput from './TaskBottomSheetInput';
 
 const ThreeDotBottomSheetHeader = () => {
   return (
     <>
       <View style={styles.container}>
-        <Text style={styles.titleHeader}>Task Name</Text>
-        <TextInput
-          placeholder="Buy supplies"
-          placeholderTextColor={COLORS.black}
-          style={styles.inputStyle}
-        />
+        <TaskBottomSheetInput placeholder="Buy supplies"  placeholderTextColor={COLORS.black}  />
         <View style={styles.timeAndimgWrapper}>
           <Image style={styles.iconStyle} source={icons.date} />
           <Text style={styles.timeStyle}>June 24, 2023 at 3:03 PM</Text>

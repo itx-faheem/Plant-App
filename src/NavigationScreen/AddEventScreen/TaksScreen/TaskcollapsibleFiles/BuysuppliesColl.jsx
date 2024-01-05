@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TextInput, View} from 'react-native';
+import {StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import React, {useState, useMemo, useRef} from 'react';
 import TaskCollasipbleArrowHeader from './TaskCollasipbleArrowHeader';
 import Collapsible from 'react-native-collapsible';
@@ -7,7 +7,7 @@ import GabeSean from './GabeSean';
 import TaskCheckBoxComponent from './TaskCheckBoxComponent';
 import AppBottomSheet from '../../../../../component/appcomponent/AppBottomSheet';
 
-const BuysuppliesColl = ({threeDotsPress}) => {
+const BuysuppliesColl = ({threeDotsPress,addTaskComponentPress}) => {
   const [handleCollapsibleBuy, sethandleCollapsibleBuy] = useState(false);
   const handleupdown = () => {
     sethandleCollapsibleBuy(!handleCollapsibleBuy);
@@ -32,13 +32,12 @@ const BuysuppliesColl = ({threeDotsPress}) => {
           <View>
             <TaskCheckBoxComponent />
           </View>
-          <View>
-            <TextInput
-              placeholder="Add Items"
-              placeholderTextColor={COLORS.gray}
-              style={styles.inputStyle}
-            />
-          </View>
+          <TouchableOpacity
+          onPress={addTaskComponentPress}
+          activeOpacity={0.5} 
+           style={styles.TouchableOpacityStyle} >
+            <Text style={styles.textStyle} >Add Items</Text>
+          </TouchableOpacity>
         </Collapsible>
       </View>
     </>
@@ -48,9 +47,13 @@ const BuysuppliesColl = ({threeDotsPress}) => {
 export default BuysuppliesColl;
 
 const styles = StyleSheet.create({
-  inputStyle: {
-    paddingHorizontal: 32,
-    fontSize: SIZES.small,
-    color: COLORS.gray,
+  textStyle:{
+    fontSize:SIZES.font,
+    color:COLORS.gray,
+    fontWeight:"500",
   },
+  TouchableOpacityStyle:{
+    paddingHorizontal:32,
+    paddingVertical:12
+  }
 });

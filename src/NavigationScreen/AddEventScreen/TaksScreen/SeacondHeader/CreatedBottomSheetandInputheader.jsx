@@ -1,21 +1,17 @@
 import {StyleSheet, Text, TextInput, View} from 'react-native';
-import React, {useMemo, useRef, useState} from 'react';
+import React from 'react';
 import AppIcon from 'react-native-vector-icons/AntDesign';
-import {
-  CreaatedEventDetail,
-  HomeHeaderBar,
-} from '../../HomeEventScreen/HomeComponent';
+import {CreaatedEventDetail} from '../../HomeEventScreen/HomeComponent';
 import {COLORS, SIZES} from '../../../../../constants';
-import AppBottomSheet from '../../../../../component/appcomponent/AppBottomSheet';
 
-const CreatedBottomSheetandInputheader = ( {handlePress} ) => {
+const CreatedBottomSheetandInputheader = ({handlePress}) => {
   return (
     <>
       <View style={styles.container}>
         <CreaatedEventDetail
-          onPress={(handlePress)}
+          onPress={handlePress}
           style={styles.createdEventbgc}>
-          <AppIcon name="down" size={15} />
+          <AppIcon name="down" color={COLORS.gray} size={15} />
         </CreaatedEventDetail>
         <View style={styles.inputWrapper}>
           <AppIcon name="search1" size={18} color={COLORS.gray} />

@@ -45,7 +45,7 @@ const SwitchContainer = ({label, icon, onValueChange, value}) => (
   <View style={styles.switchContainer}>
     <View style={styles.wrapper}>
       {typeof icon === 'string' ? (
-        <AppIcon name={icon} size={20} />
+        <AppIcon color={COLORS.gray}  name={icon} size={20} />
       ) : (
         <Image source={icon} style={styles.bannerStyle} />
       )}

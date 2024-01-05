@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import AppIcon from 'react-native-vector-icons/AntDesign';
 import { COLORS, SIZES, images } from '../../../../../constants';
 
-const HomeHeaderBar = ({ onPress }) => {
+const HomeHeaderBar = ({ onPress, AddEvent }) => {
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
@@ -19,7 +19,7 @@ const HomeHeaderBar = ({ onPress }) => {
           style={styles.innerButton}
           onPress={onPress}>
           <AppIcon name="plus" size={14} color={COLORS.white} />
-          <Text style={styles.buttonText}>Add Event</Text>
+          <Text style={styles.buttonText}>{AddEvent}</Text>
         </TouchableOpacity>
       </View>
     </View>

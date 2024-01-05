@@ -29,7 +29,10 @@ const styles = StyleSheet.create({
   imgStyle: {
     width: '100%',
     height: 70,
-    resizeMode: 'contain',
+    resizeMode: 'cover',
     top: '-1%',
   },
+  container:{
+    marginBottom:"5%"
+  }
 });

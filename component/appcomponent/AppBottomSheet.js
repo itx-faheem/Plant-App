@@ -10,7 +10,7 @@ import Animated, {
 } from "react-native-reanimated";
 const heightDimensions = Dimensions.get("screen").height;
 
-const AppBottomSheet = ({ children, snapPoints, bref, saveBtn, onTouchStart, cancelprops, titleProps, save, cancleBtn, cancelColor, saveColor, }) => {
+const AppBottomSheet = ({ stylesBottomSheet,children, snapPoints, bref, saveBtn, onTouchStart, cancelprops, titleProps, save, cancleBtn, cancelColor, saveColor, }) => {
   return (
     <>
       <BottomSheetModal
@@ -20,7 +20,7 @@ const AppBottomSheet = ({ children, snapPoints, bref, saveBtn, onTouchStart, can
         animateOnMount={true}
         backdropComponent={(props) => <CustomBackdrop {...props} onTouchStart={onTouchStart} />}
         handleIndicatorStyle={styles.indicatorStyle}
-        style={styles.styleBottomSheet}
+        style={stylesBottomSheet}
 
       >
         <View style={styles.headerBottomSheet}>

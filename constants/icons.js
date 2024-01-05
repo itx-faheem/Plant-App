@@ -40,6 +40,10 @@ import fqa from "../assets/icons/fqa.png";
 import userBlack from "../assets/icons/userBlack.png";
 import BlackLock from "../assets/icons/BlackLock.png";
 import Banner from "../assets/icons/Banner.png";
+import costs from "../assets/icons/costs.png";
+import remaining from "../assets/icons/remaining.png";
+import circleDollar from "../assets/icons/circleDollar.png";
+
 export default {
   compass,
   date,
@@ -81,5 +85,8 @@ export default {
   fqa,
   userBlack,
   BlackLock,
-  Banner
+  Banner,
+  costs,
+  remaining,
+  circleDollar
 };
