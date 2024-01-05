@@ -1,6 +1,3 @@
-import AccountInfoMainFile from "./AccountInfoMainFile";
-
-
-export{
-    AccountInfoMainFile
-}
+import AccountInfoMainFile from './AccountInfoMainFile';
+import LogoutComponent from './LogoutComponent';
+export {AccountInfoMainFile, LogoutComponent};

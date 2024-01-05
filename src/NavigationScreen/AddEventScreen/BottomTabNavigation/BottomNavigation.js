@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
     tabsBottomContainer: {
         height: '6.6%',
         paddingVertical: 5,
-        zIndex:1
     },
     tabBarMess: {
         position: "absolute",

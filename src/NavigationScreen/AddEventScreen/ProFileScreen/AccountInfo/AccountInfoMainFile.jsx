@@ -4,10 +4,11 @@ import AccountComponent from '../../../../../component/appcomponent/AccountCompo
 import {COLORS, icons} from '../../../../../constants';
 import {OtherandAccount} from '../../../../../component/appcomponent';
 import AppBottomSheet from '../../../../../component/appcomponent/AppBottomSheet';
+import LogoutComponent from './LogoutComponent';
 
 const AccountInfoMainFile = ({Personalinformation, ChangePassword, FAQFile, Notifications, Mysubscription}) => {
-  const snapPoints = useMemo(() => ['45%', '45%'], []);
-  const [showBottom, setShowBottom] = useState(true);
+  const snapPoints = useMemo(() => ['43%', '43%'], []);
+  const [showBottom, setShowBottom] = useState(false);
   const bottomSheetRef = useRef(null);
 
   const handlePress = () => {
@@ -36,10 +37,11 @@ const AccountInfoMainFile = ({Personalinformation, ChangePassword, FAQFile, Noti
     {
       showBottom && (
         <AppBottomSheet 
+        titleProps="Confirm"
         onTouchStart={closeBottomSheet}
         snapPoints={snapPoints}
          >
-          
+          <LogoutComponent />
         </AppBottomSheet>
       )
     }
