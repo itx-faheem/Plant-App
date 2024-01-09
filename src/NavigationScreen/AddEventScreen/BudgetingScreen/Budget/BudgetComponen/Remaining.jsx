@@ -9,6 +9,7 @@ const Remaining = ({
   backgroundColor,
   source,
   pedingPress,
+  price
 }) => (
   <TouchableOpacity
     onPress={pedingPress}
@@ -27,8 +28,8 @@ const Remaining = ({
         }}>
         <Image
           style={{
-            width: 15,
-            height: 15,
+            width: 14,
+            height: 14,
             resizeMode: 'contain',
           }}
           source={source}
@@ -37,7 +38,7 @@ const Remaining = ({
       <Text style={styles.titleStyle}>{Remaining}</Text>
     </View>
     <View style={styles.rightContent}>
-      <Text style={{...styles.priceText, color}}>$49</Text>
+      <Text style={{...styles.priceText, color}}>{price}</Text>
       <AppIcon name="right" size={15} color={COLORS.gray} />
     </View>
   </TouchableOpacity>

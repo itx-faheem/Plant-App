@@ -6,18 +6,6 @@ import { AppBottomSheet } from '../../../../component/appcomponent/AppBottomShee
 
 const Profile = ({ navigation }) => {
   const snapPoints = useMemo(() => ['45%', '45%'], []);
-  // const [showBottom, setShowBottom] = useState(false);
-  // const bottomSheetRef = useRef(null);
-
-  // const handlePress = () => {
-  //   bottomSheetRef.current?.expand();
-  //   setShowBottom(false);
-  // };
-
-  // const closeBottomSheet = () => {
-  //   setShowBottom(true);
-  //   bottomSheetRef.current?.close();
-  // };
 
   return (
     <>

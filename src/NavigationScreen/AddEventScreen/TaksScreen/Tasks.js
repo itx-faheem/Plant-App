@@ -54,7 +54,7 @@ const Tasks = ({ navigation }) => {
           <SetupCollasipble />
         </View>
       </ScrollView>
-      {showHide && (
+      {/* {showHide && ( */}
         <AppBottomSheet
           cancelprops="Choose Event"
           cancelColor={styles.cancelColor}
@@ -67,7 +67,7 @@ const Tasks = ({ navigation }) => {
         >
           <HeaderBottomSheetTask onPress={() => navigation.navigate("MainCreateComponent")} />
         </AppBottomSheet>
-      )}
+      {/* )} */}
       {
         showHideThree &&
         <AppBottomSheet

@@ -7,9 +7,9 @@ const RemainingCenterComponent = ({pedingPress}) => {
 
   return (
     <View style={styles.container}>
-      <Remaining source={icons.remaining}  color={COLORS.green} Remaining="Remaining" />
-      <Remaining source={icons.costs}  backgroundColor={{backgroundColor:COLORS.blue}} color={COLORS.blue} Remaining="Estimated remaining costs" />
-      <Remaining pedingPress={pedingPress}  source={icons.circleDollar}   backgroundColor={{backgroundColor:COLORS.orange}} color={COLORS.orange} Remaining="Pending reimbursements" />
+      <Remaining price="$49" source={icons.remaining}  color={COLORS.green} Remaining="Remaining" />
+      <Remaining price="$0" source={icons.costs}  backgroundColor={{backgroundColor:COLORS.blue}} color={COLORS.blue} Remaining="Estimated remaining costs" />
+      <Remaining price="$251" pedingPress={pedingPress}  source={icons.circleDollar}   backgroundColor={{backgroundColor:COLORS.orange}} color={COLORS.orange} Remaining="Pending reimbursements" />
     </View>
   );
 };

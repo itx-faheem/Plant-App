@@ -3,12 +3,25 @@ import React, {useState} from 'react';
 import {AppHeader} from '../../../../../component/appcomponent';
 import {COLORS, SIZES, icons} from '../../../../../constants';
 import AppIcon from 'react-native-vector-icons/FontAwesome5';
-const Notifications = ({navigation}) => {
-  const [isEnabled, setIsEnabled] = useState(false);
-  const [isEnabledOther, setIsEnabledOther] = useState(false);
+const switchMenu = [{
+label:"Mute",
+icon:"volume-mute",
+value:false
+},
+{
+  label:"Banner icon",
+  icon:icons.Banner,
+  value: false
 
-  const toggleSwitch = () => setIsEnabled(prevState => !prevState);
-  const toggleSwitchOther = () => setIsEnabledOther(prevState => !prevState);
+}]
+const Notifications = ({navigation}) => {
+  const [toggleMenu, setToggleMenu] = useState(switchMenu);
+
+  const onToggle = (toggleButtonIndex) =>  {
+    const btnArray = [...toggleMenu]
+    btnArray[toggleButtonIndex].value=!btnArray[toggleButtonIndex].value;
+    setToggleMenu([...btnArray]);
+  }
 
   return (
     <View>
@@ -24,18 +37,16 @@ const Notifications = ({navigation}) => {
       </View>
 
       <View style={styles.innerContainer}>
-        <SwitchContainer
-          label="Mute"
-          icon="volume-mute"
-          onValueChange={toggleSwitch}
-          value={isEnabled}
+       {toggleMenu.map((toggle, index)=>{
+        const {label, icon, value } = toggle
+        return <SwitchContainer
+          key={index}
+          label={label}
+          icon={icon}
+          onValueChange={()=>onToggle(index)}
+          value={value}
         />
-        <SwitchContainer
-          label="Banner icon"
-          icon={icons.Banner}
-          onValueChange={toggleSwitchOther}
-          value={isEnabledOther}
-        />
+       })}
       </View>
     </View>
   );
