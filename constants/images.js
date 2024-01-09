@@ -15,6 +15,7 @@ import Sean from "../assets/images/Sean.png";
 import Gabe from "../assets/images/Gabe.png";
 import invitepicture from "../assets/images/invitepicture.png";
 import Circle from "../assets/images/Circle.png";
+import ReceiptImg from "../assets/images/ReceiptImg.png";
 
 export default {
   profile,cloudBgc,Background,Adam,Artwork,
@@ -29,5 +30,6 @@ export default {
   Sean,
   Gabe,
   invitepicture,
-  Circle
+  Circle,
+  ReceiptImg
 };

@@ -3,7 +3,7 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {COLORS, SIZES, images} from '../../../../../constants';
 import Entypo from 'react-native-vector-icons/Entypo';
 
-const ReimbursementsData = () => {
+const ReimbursementsData = ({onPressView}) => {
   const [selectedItemId, setselectedItemId] = useState(null);
   const data = [
     {img: images.Adam,color: COLORS.red,name: 'Sean',Unpaid: 'Unpaid',price: 'Vodka - $36',ViewAndpay: 'Pay',id: 1,},
@@ -11,7 +11,7 @@ const ReimbursementsData = () => {
     {img: images.Adam,color: COLORS.green,name: 'Sean',Unpaid: 'Paid',price: '801 E. Seneca St',ViewAndpay: 'View',id: 3,},
     {img: images.Adam,color: COLORS.green,name: 'Sean',Unpaid: 'Paid',price: '801 E. Seneca St',ViewAndpay: 'View',id: 4,},
   ];
-  
+
   const handleRadioClick = itemId => {
     setselectedItemId(selectedItemId === itemId ? null : itemId);
   };
@@ -39,48 +39,58 @@ const ReimbursementsData = () => {
       {data.map((item, index) => (
         <View style={styles.mapContainer} key={index}>
           <RadioBtn itemId={item.id} />
-          <View style={{flexDirection:"row", alignItems:"center", justifyContent:"space-between", width:"90%",paddingVertical:2}} >
-          <View style={{gap: 8, marginVertical: 4}}>
-            <View style={styles.imgWrappeer}>
-              <Image style={styles.imgStyle} source={item.img} />
-              <Text style={styles.nameStyle}>{item.name}</Text>
-            </View>
-            <Text style={styles.priceStyle}>{item.price}</Text>
-            <View
-              style={{
-                ...styles.dotWrapper,
-                backgroundColor:
-                  item.Unpaid === 'Paid'
-                    ? 'rgba(22, 128, 98, 0.2)'
-                    : 'rgba(255, 0, 0, 0.2)',
-              }}>
-              <View
-                style={{...styles.doStyle, backgroundColor: item.color}}></View>
-              <Text style={{...styles.unPaidText, color: item.color}}>
-                {item.Unpaid}
-              </Text>
-            </View>
-          </View>
-          <TouchableOpacity
-            activeOpacity={0.5}
-            onPress={() => item.id === 2 && alert('oka')}
+          <View
             style={{
-              ...styles.PayWrapper,
-              backgroundColor:
-                item.ViewAndpay === 'Pay' ? COLORS.primary : COLORS.secondary,
-              borderWidth: 1,
-              borderColor: COLORS.primary,
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              width: '90%',
+              paddingVertical: 2,
             }}>
-            <Text
+            <View style={{gap: 8, marginVertical: 4}}>
+              <View style={styles.imgWrappeer}>
+                <Image style={styles.imgStyle} source={item.img} />
+                <Text style={styles.nameStyle}>{item.name}</Text>
+              </View>
+              <Text style={styles.priceStyle}>{item.price}</Text>
+              <View
+                style={{
+                  ...styles.dotWrapper,
+                  backgroundColor:
+                    item.Unpaid === 'Paid'
+                      ? 'rgba(22, 128, 98, 0.2)'
+                      : 'rgba(255, 0, 0, 0.2)',
+                }}>
+                <View
+                  style={{
+                    ...styles.doStyle,
+                    backgroundColor: item.color,
+                  }}></View>
+                <Text style={{...styles.unPaidText, color: item.color}}>
+                  {item.Unpaid}
+                </Text>
+              </View>
+            </View>
+            <TouchableOpacity
+              activeOpacity={0.5}
+              onPress={item.id !== 1 && onPressView} 
               style={{
-                ...styles.viewText,
-                color:
-                  item.ViewAndpay === 'Pay' ? COLORS.white : COLORS.primary,
+                ...styles.PayWrapper,
+                backgroundColor:
+                  item.ViewAndpay === 'Pay' ? COLORS.primary : COLORS.secondary,
+                borderWidth: 1,
+                borderColor: COLORS.primary,
               }}>
-              {item.ViewAndpay}
-            </Text>
-          </TouchableOpacity>
-        </View>
+              <Text
+                style={{
+                  ...styles.viewText,
+                  color:
+                    item.ViewAndpay === 'Pay' ? COLORS.white : COLORS.primary,
+                }}>
+                {item.ViewAndpay}
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       ))}
     </View>

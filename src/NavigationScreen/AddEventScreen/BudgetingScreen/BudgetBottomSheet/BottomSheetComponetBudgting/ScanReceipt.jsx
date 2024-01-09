@@ -3,10 +3,10 @@ import React from 'react';
 import AppIcon from 'react-native-vector-icons/FontAwesome';
 import {COLORS, SIZES} from '../../../../../../constants';
 
-const ScanReceipt = () => {
+const ScanReceipt = ({ScanReceiptPress}) => {
   return (
     <TouchableOpacity
-      onPress={() => alert('comming soon')}
+      onPress={ScanReceiptPress}
       activeOpacity={0.5}
       style={{}}>
       <View

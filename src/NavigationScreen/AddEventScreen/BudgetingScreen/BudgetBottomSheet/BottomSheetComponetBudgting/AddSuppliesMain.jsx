@@ -7,7 +7,7 @@ import Addtotask from './Addtotask';
 import Notes from './Notes';
 import ScanReceipt from './ScanReceipt';
 
-const AddSuppliesMain = () => {
+const AddSuppliesMain = ({ScanReceiptPress}) => {
   return (
     <View style={{flex: 1}}>
       <View
@@ -28,7 +28,7 @@ const AddSuppliesMain = () => {
         borderWidth:1,
         borderColor:COLORS.secondary
       }} >
-        <ScanReceipt />
+        <ScanReceipt  ScanReceiptPress={ScanReceiptPress}  />
       </View>
     </View>
   );

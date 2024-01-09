@@ -2,10 +2,10 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import ReimbursementsData from './ReimbursementsData';
 
-const Reimbursements = () => {
+const Reimbursements = ({onPressView}) => {
   return (
     <View style={{flex:1}} >
-      <ReimbursementsData   />
+      <ReimbursementsData  onPressView={onPressView}  />
     </View>
   );
 };

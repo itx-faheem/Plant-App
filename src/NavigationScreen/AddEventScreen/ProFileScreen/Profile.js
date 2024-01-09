@@ -17,7 +17,6 @@ const Profile = ({ navigation }) => {
           ChangePassword={() => navigation.navigate('ChangePassword')}
           Notifications={() => navigation.navigate('Notifications')}
           FAQFile={() => navigation.navigate('FAQFile')}
-          // Logout={handlePress}
         />
       </View>
       {/* <AppBottomSheet
